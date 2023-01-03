@@ -1,0 +1,11 @@
+# Blocklist files/folders in same directory as the .gitignore file
+/*
+
+# ... except distribution files
+
+!.gitignore
+!package.json
+!LICENSE
+!README.md
+
+!/dist
