@@ -1,7 +1,7 @@
 {
   "version": "1.1.1",
   "name": "@hokla/eslint-plugin-custom-rules",
-  "author": "Hokla",
+  "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "description": "ESLint rules to comply with Hokla's best development practices",
@@ -13,6 +13,7 @@
     "@typescript-eslint/parser": "^5.15.0",
     "@typescript-eslint/utils": "^5.15.0",
     "eslint": "^8.11.0",
+    "eslint-plugin-custom-rules": "link:./dist",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.7.0",
@@ -20,6 +21,7 @@
   },
   "scripts": {
     "build": "tsc && cp lib/index.js dist/",
+    "lint": "eslint --ext .ts \"src/**/*.+(ts)\"",
     "test": "jest"
   },
   "directories": {
