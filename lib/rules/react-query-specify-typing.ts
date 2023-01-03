@@ -37,9 +37,10 @@ export const rule = createRule<Options, MessageIds>({
         "Type parameters should always be specified when calling useQuery and useMutation from react-query",
     },
     messages: {
-      "missing-use-query-types": "Type parameters are missing in useQuery call",
+      "missing-use-query-types":
+        "Type parameters should be specified when using useQuery hook",
       "missing-use-mutation-types":
-        "Type parameters are missing in useMutation call",
+        "Type parameters should be specified when using useMutation hook",
     },
     type: "problem",
     schema: [],
