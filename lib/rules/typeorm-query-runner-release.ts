@@ -21,7 +21,7 @@ type NodeWithBody = TSESTree.Node & {
 };
 
 export const rule = createRule<Options, MessageIds>({
-  name: "typeorm-query-runner-connection-release",
+  name: "typeorm-query-runner-release",
   defaultOptions: [],
   create(context) {
     function isNodeWithBody(node: TSESTree.Node): node is NodeWithBody {

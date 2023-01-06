@@ -9,10 +9,13 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["custom-rules"],
-  "rules": {
-    "custom-rules/type-mismatch": "warn",
-    "custom-rules/react-query-specify-typing": "warn",
-    "custom-rules/typeorm-query-runner-connection-release": "warn"
-  }
+  "extends": [
+    // "eslint:recommended",
+    "plugin:eslint-plugin/recommended",
+    "plugin:@hokla/custom-rules/recommended"
+  ]
+  // "plugins": ["@hokla/custom-rules"],
+  // "rules": {
+  //   "@hokla/custom-rules/react-query-specify-typing": "warn"
+  // }
 }

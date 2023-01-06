@@ -7,8 +7,9 @@
  * 2. Type some wrong code below and checkout the visual rendering of your rule
  */
 
-function main() {
+export function main() {
   console.log("Type some wrong code below and see your magic at work !!");
 
+  const quer = useQuery({});
   // ... (TLDR -> Copy/Paste your invalid test cases below)
 }

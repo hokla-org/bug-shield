@@ -14,7 +14,7 @@ const createRule = ESLintUtils.RuleCreator(
 
 // Type: RuleModule<"uppercase", ...>
 export const rule = createRule<Options, MessageIds>({
-  name: "type-mismatch",
+  name: "mutation-decorator-return-type-mismatch",
   defaultOptions: [],
   create(context) {
     function isMethodDefinition(

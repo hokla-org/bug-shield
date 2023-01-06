@@ -5,7 +5,7 @@ const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",
 });
 
-ruleTester.run("mutation-decorator-return-type-mismatch", rule, {
+ruleTester.run("{RULE_NAME}", rule, {
   valid: [
     `
     class MyService {
