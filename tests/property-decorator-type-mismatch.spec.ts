@@ -5,7 +5,7 @@ const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",
 });
 
-ruleTester.run("property-decorator-type-mismatch", rule, {
+ruleTester.run("{RULE_NAME}", rule, {
   valid: [
     `
     export class RGDSPatient {
@@ -22,7 +22,7 @@ ruleTester.run("property-decorator-type-mismatch", rule, {
         adress!: AdressEntity;
       }
       `,
-      errors: [{ messageId: "mismatch" }],
+      errors: [{ messageId: "property-decorator-type-mismatch" }],
     },
   ],
 });

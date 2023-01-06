@@ -4,7 +4,7 @@ import {
   TSESTree,
 } from "@typescript-eslint/utils";
 
-type MessageIds = "mismatch";
+type MessageIds = "property-decorator-type-mismatch";
 
 type Options = [];
 
@@ -14,7 +14,7 @@ const createRule = ESLintUtils.RuleCreator(
 
 // Type: RuleModule<"uppercase", ...>
 export const rule = createRule<Options, MessageIds>({
-  name: "type-mismatch",
+  name: "property-decorator-type-mismatch",
   defaultOptions: [],
   create(context) {
     function getPropertyDefinitionFromDecorator(
@@ -65,7 +65,7 @@ export const rule = createRule<Options, MessageIds>({
         const decoratorTypeName = getTypeDecoratorType(node);
         if (decoratorTypeName !== propertyTypeName) {
           context.report({
-            messageId: "mismatch",
+            messageId: "property-decorator-type-mismatch",
             node: node,
           });
         }
@@ -78,7 +78,8 @@ export const rule = createRule<Options, MessageIds>({
       description: "Parameter of Type Decorator should match the property type",
     },
     messages: {
-      mismatch: "Type Decorator's parameter does not match the property type",
+      "property-decorator-type-mismatch":
+        "Type Decorator's parameter does not match the property type",
     },
     type: "problem",
     schema: [],
