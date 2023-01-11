@@ -10,12 +10,8 @@
     "sourceType": "module"
   },
   "extends": [
-    // "eslint:recommended",
+    "eslint:recommended",
     "plugin:eslint-plugin/recommended",
     "plugin:@hokla/custom-rules/recommended"
   ]
-  // "plugins": ["@hokla/custom-rules"],
-  // "rules": {
-  //   "@hokla/custom-rules/react-query-specify-typing": "warn"
-  // }
 }
