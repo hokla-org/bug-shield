@@ -27,12 +27,11 @@ export const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "error",
-      description:
-        "Type parameters should always be specified when calling useQuery and useMutation from react-query",
+      description: "Array.prototype.forEach is not designed for asynchronous code",
     },
     messages: {
       "no-async-in-foreach":
-        "Do not use async functions in foreach. Use Promise.all() instead.",
+        "Do not use async functions in forEach. Use Promise.all() instead.",
     },
     type: "problem",
     schema: [],
