@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.5.0",
   "name": "@hokla/eslint-plugin-custom-rules",
   "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
