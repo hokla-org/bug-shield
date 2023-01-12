@@ -20,30 +20,41 @@ yarn add --dev eslint typescript @typescript-eslint/parser @typescript-eslint/es
 
 In your `.eslintrc.json` file :
 
-```
+```json
 {
   "root": true,
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@hokla/custom-rules/recommended"
   ],
-  "plugins": ["@typescript-eslint", "@hokla/eslint-plugin-custom-rules"],
+  "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
-  // If you want to customize the level of warning (default to 'warn')
+  // In case you want to customize the level of warning (default to 'warn')
   "rules": {
-    "@hokla/custom-rules/react-query-specify-typing": "off" // "error" | "warn
+    "@hokla/custom-rules/react-query-specify-typing": "warn" // "error" | "warn
   }
 }
 ```
 
-#### Contribute
+## List of supported rules
 
-- Create a new PR: https://github.com/hokla-org/eslint-plugin-custom-rules/compare
+| Rule                                    | Configuration | Description                                                                   |
+| --------------------------------------- | ------------- | ----------------------------------------------------------------------------- |
+| typeorm-query-runner-release            | recommended   | Ensure all queryRunner instances finally release their db connection          |
+| react-query-specify-type                | recommended   | Force to specify data types when using methods useQuery and useMutation       |
+| property-decorator-type-mismatch        | recommended   | Ensure attribute decorator @Type(...) is consistent with property type        |
+| mutation-decorator-return-type-mismatch | recommended   | Ensure GraphQL @Mutation(...) decorator is consistent with method return type |
+
+# Contribute
+
+- Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-custom-rules/compare
 
 - Write a test with valid and invalid code samples
 
 - Use online tools to specify AST selectors and implement the rule
+
   - https://astexplorer.net/
   - https://estools.github.io/esquery/
   - https://typescript-eslint.io/play
@@ -51,19 +62,6 @@ In your `.eslintrc.json` file :
   - https://eslint-utils.mysticatea.dev/
   - https://typescript-eslint.io/
 
-#### Ideas for next recommended rules and plugins
+- Ask a review !
 
-- No dynamic component in render
-
-Ideas for new rules
-
-- No destructuring react query object https://www.notion.so/m33/ETQMI-lorsque-je-prescris-un-ou-plusieurs-bolus-la-dose-cumul-e-est-actualis-e-7353bb4b62554814b9268db33d245e14
-
-- Release connection pool
-  https://www.notion.so/m33/Dashboard-display-overview-long-time-in-the-past-doesn-t-work-28313bc54c2645b49fbc0ad9ee649dc3
-
-- Prevent await un loops, maps, ...
-  https://www.notion.so/m33/ETQDev-lorsque-j-appelle-la-route-POST-tables-je-peux-cr-er-une-nouvelle-table-et-la-remplir-avec--9a12e2c8764f4497898130a71212616c
-
-- No Not(null) in typeOrm findOptions but rather Not(IsNull()) https://www.notion.so/m33/576f703512bb424999423e2b05cf8dde?v=853d3074f7eb447eb7e8b34127e1105c&p=3aa206931aa74691bb0b61ca1bdbb9ca&pm=s
-- https://github.com/hokla-org/dojo-eslint-rules/blob/master/eslint/lib/rules/type-mismatch.ts
+- Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`)
