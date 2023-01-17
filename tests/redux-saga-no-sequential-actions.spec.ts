@@ -17,6 +17,15 @@ ruleTester.run("{RULE_NAME}", rule, {
         `
     yield call(fetchPizza);
     yield put(orderAdded({pizza: 1, coke: 1}));
+    `,
+        `
+    yield put(batchActions(
+      [
+        setPizzasOrdered({pizza: 1}),
+        setCokesOrdered({coke: 1})
+      ],
+      "ORDER_ADDED"
+    ))
     `
     ],
     invalid: [
