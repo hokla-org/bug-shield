@@ -46,7 +46,8 @@ In your `.eslintrc.json` file :
 | react-query-specify-type                | recommended   | Force to specify data types when using methods useQuery and useMutation       |
 | property-decorator-type-mismatch        | recommended   | Ensure attribute decorator @Type(...) is consistent with property type        |
 | mutation-decorator-return-type-mismatch | recommended   | Ensure GraphQL @Mutation(...) decorator is consistent with method return type |
-| no-async-in-foreach                     | recommended   | Ensure that we don't use async callbacks in foreach loops
+| no-async-in-foreach                     | recommended   | Ensure that we don't use async callbacks in foreach loops                     |
+| redux-saga-no-sequential-actions        | recommended   | Prevent dispatching Redux Saga actions sequentially                           |
 
 # Contribute
 

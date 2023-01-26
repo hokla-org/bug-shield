@@ -10,6 +10,6 @@
 export function main() {
   console.log("Type some wrong code below and see your magic at work !!");
 
-  const quer = useQuery({});
-  // ... (TLDR -> Copy/Paste your invalid test cases below)
+  // --- TEST YOUR LINTER RULE HERE
+  // --- DO NOT COMMIT CHANGES TO THIS FILE AS IT IS A PLAYGROUND
 }
