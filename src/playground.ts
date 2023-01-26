@@ -7,14 +7,9 @@
  * 2. Type some wrong code below and checkout the visual rendering of your rule
  */
 
-export function* main() {
+export function main() {
   console.log("Type some wrong code below and see your magic at work !!");
 
-  yield put();
-  yield put();
-  // ... (TLDR -> Copy/Paste your invalid test cases below)
-}
-
-function put() {
-
+  // --- TEST YOUR LINTER RULE HERE
+  // --- DO NOT COMMIT CHANGES TO THIS FILE AS IT IS A PLAYGROUND
 }
