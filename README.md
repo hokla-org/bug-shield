@@ -48,7 +48,7 @@ In your `.eslintrc.json` file :
 | mutation-decorator-return-type-mismatch | recommended   | Ensure GraphQL @Mutation(...) decorator is consistent with method return type |
 | no-async-in-foreach                     | recommended   | Ensure that we don't use async callbacks in foreach loops                     |
 | redux-saga-no-sequential-actions        | recommended   | Prevent dispatching Redux Saga actions sequentially                           |
-
+| forbid-lower-case-jsx-tags          | recommended   | Ensure all JSX tags are not in lower case          |
 # Contribute
 
 - Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-custom-rules/compare
