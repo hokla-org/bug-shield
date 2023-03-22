@@ -41,14 +41,16 @@ In your `.eslintrc.json` file :
 ## List of supported rules
 
 | Rule                                    | Configuration | Description                                                                   |
-| --------------------------------------- | ------------- | ----------------------------------------------------------------------------- |
+|-----------------------------------------|---------------|-------------------------------------------------------------------------------|
 | typeorm-query-runner-release            | recommended   | Ensure all queryRunner instances finally release their db connection          |
 | react-query-specify-type                | recommended   | Force to specify data types when using methods useQuery and useMutation       |
 | property-decorator-type-mismatch        | recommended   | Ensure attribute decorator @Type(...) is consistent with property type        |
 | mutation-decorator-return-type-mismatch | recommended   | Ensure GraphQL @Mutation(...) decorator is consistent with method return type |
 | no-async-in-foreach                     | recommended   | Ensure that we don't use async callbacks in foreach loops                     |
 | redux-saga-no-sequential-actions        | recommended   | Prevent dispatching Redux Saga actions sequentially                           |
-| forbid-lower-case-jsx-tags          | recommended   | Ensure all JSX tags are not in lower case          |
+| forbid-lower-case-jsx-tags              | recommended   | Ensure all JSX tags are not in lower case                                     |
+| no-key-or-ref-prop                      | recommended   | Prevent naming function component props `key` or `ref`                        |
+
 # Contribute
 
 - Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-custom-rules/compare
