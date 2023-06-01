@@ -52,6 +52,7 @@ jobs:
         with:
           tag-prefix: "v"
           version-type: ${{ github.event.inputs.version-type }}
+          commit-message: "chore(package.json): bump version to {{version}}"
 
   PublishToNpm:
     needs: BumpVersion
