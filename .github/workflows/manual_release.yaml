@@ -1,0 +1,66 @@
+name: Manual Release Trigger
+on:
+  workflow_dispatch:
+    branches:
+      - main
+    inputs:
+      version-type:
+        description: "Type of release"
+        required: true
+        default: "patch"
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  RunTests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache node modules # Caching ~/.npm to accelerate CI
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.18"
+
+      - name: Install Dependencies
+        run: yarn
+      - name: Run Unit tests
+        run: yarn test
+
+  BumpVersionAndPublishToNpm:
+    needs: RunTests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@v9.1.0
+        with:
+          tag-prefix: "v"
+
+      - run: yarn
+      - run: yarn build
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          version-type: ${{ github.event.inputs.version-type }}

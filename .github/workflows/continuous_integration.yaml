@@ -26,26 +26,3 @@ jobs:
         run: yarn
       - name: Run Unit tests
         run: yarn test
-  PublishToNPM:
-    needs: RunTests
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
-
-      - name: Automated Version Bump
-        uses: phips28/gh-action-bump-version@v9.1.0
-        with:
-          tag-prefix: "v"
-
-      - run: yarn
-      - run: yarn build
-
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
