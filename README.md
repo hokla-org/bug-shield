@@ -38,18 +38,7 @@ In your `.eslintrc.json` file :
 }
 ```
 
-## List of supported rules
-
-| Rule                                    | Configuration | Description                                                                   |
-|-----------------------------------------|---------------|-------------------------------------------------------------------------------|
-| typeorm-query-runner-release            | recommended   | Ensure all queryRunner instances finally release their db connection          |
-| react-query-specify-type                | recommended   | Force to specify data types when using methods useQuery and useMutation       |
-| property-decorator-type-mismatch        | recommended   | Ensure attribute decorator @Type(...) is consistent with property type        |
-| mutation-decorator-return-type-mismatch | recommended   | Ensure GraphQL @Mutation(...) decorator is consistent with method return type |
-| no-async-in-foreach                     | recommended   | Ensure that we don't use async callbacks in foreach loops                     |
-| redux-saga-no-sequential-actions        | recommended   | Prevent dispatching Redux Saga actions sequentially                           |
-| forbid-lower-case-jsx-tags              | recommended   | Ensure all JSX tags are not in lower case                                     |
-| no-key-or-ref-prop                      | recommended   | Prevent naming function component props `key` or `ref`                        |
+                   |
 
 # Contribute
 
@@ -69,3 +58,30 @@ In your `.eslintrc.json` file :
 - Ask a review !
 
 - Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`)
+
+## Configs
+
+Configs section would normally go here.
+
+## Rules
+
+<!-- begin auto-generated rules list -->
+
+💼 [Configurations](https://github.com/jsx-eslint/eslint-plugin-react/#shareable-configs) enabled in.\
+⚠️ [Configurations](https://github.com/jsx-eslint/eslint-plugin-react/#shareable-configs) set to warn in.\
+🏃 Set in the `react-native` [configuration](https://github.com/jsx-eslint/eslint-plugin-react/#shareable-configs).\
+☑️ Set in the `recommended` [configuration](https://github.com/jsx-eslint/eslint-plugin-react/#shareable-configs).
+
+| Name                                                                                             | Description                                                                                                                                                                         | 💼    | ⚠️    |
+| :----------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---- | :---- |
+| [forbid-lowercase-jsx-tags](docs/rules/forbid-lowercase-jsx-tags.md)                             | To be used in a React Native project: this rule forbids JSX tags that don't begin with a capital letter                                                                             |       |       |
+| [luxon-force-zone-in-datetime](docs/rules/luxon-force-zone-in-datetime.md)                       | TODO                                                                                                                                                                                |       |       |
+| [mutation-decorator-return-type-mismatch](docs/rules/mutation-decorator-return-type-mismatch.md) | Parameter of Mutation Decorator should match the method's return type                                                                                                               |       |       |
+| [no-async-in-foreach](docs/rules/no-async-in-foreach.md)                                         | Array.prototype.forEach is not designed for asynchronous code                                                                                                                       |       |       |
+| [no-key-or-ref-prop](docs/rules/no-key-or-ref-prop.md)                                           | This rule forbids using props named `key` or `ref` in React function components, as they are reserved words and will not act as intended                                            |       |       |
+| [property-decorator-type-mismatch](docs/rules/property-decorator-type-mismatch.md)               | Parameter of Type Decorator should match the property type                                                                                                                          |       |       |
+| [react-query-specify-typing](docs/rules/react-query-specify-typing.md)                           | Type parameters should always be specified when calling useQuery and useMutation from react-query                                                                                   | 🏃 ☑️ |       |
+| [redux-saga-no-sequential-actions](docs/rules/redux-saga-no-sequential-actions.md)               | description here                                                                                                                                                                    |       | 🏃 ☑️ |
+| [typeorm-query-runner-release](docs/rules/typeorm-query-runner-release.md)                       | Any statement calling a queryRunner should be followed by a try/catch/finally block that ensures that the connection pool is released in any case by calling queryRunner.release(). |       |       |
+
+<!-- end auto-generated rules list -->
