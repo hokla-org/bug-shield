@@ -1,7 +1,4 @@
-import {
-  ESLintUtils,
-  TSESTree,
-} from "@typescript-eslint/utils";
+import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
 type MessageIds = "sequential-redux-actions";
 const DESCRIPTION = `Avoid dispatching two actions sequentially as it will result in multiple UI updates, and unexpected display due to illegal intermediate states.
@@ -35,7 +32,7 @@ export const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "warn",
-      description: DESCRIPTION,
+      description: "description here",
     },
     messages: {
       "sequential-redux-actions": DESCRIPTION,

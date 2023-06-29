@@ -25,14 +25,12 @@ export const rule = createRule<Options, MessageIds>({
   defaultOptions: [],
   create(context) {
     return {
-      ["JSXOpeningElement > JSXIdentifier"](
-        node: TSESTree.JSXIdentifier
-      ) {
+      ["JSXOpeningElement > JSXIdentifier"](node: TSESTree.JSXIdentifier) {
         const lowercaseRegex = /[a-z]/u;
-        
+
         if (lowercaseRegex.test(node.name.charAt(0))) {
           return context.report({
-            messageId: 'forbid-lowercase-jsx-tags',
+            messageId: "forbid-lowercase-jsx-tags",
             node: node,
           });
         }
@@ -46,7 +44,8 @@ export const rule = createRule<Options, MessageIds>({
         "To be used in a React Native project: this rule forbids JSX tags that don't begin with a capital letter",
     },
     messages: {
-      "forbid-lowercase-jsx-tags": 'JSX tags must begin with a capital letter; did you try to use an HTML tag in a React Native project?'
+      "forbid-lowercase-jsx-tags":
+        "JSX tags must begin with a capital letter; did you try to use an HTML tag in a React Native project?",
     },
     type: "problem",
     schema: [],
