@@ -55,6 +55,8 @@ In your `.eslintrc.json` file :
   - https://eslint-utils.mysticatea.dev/
   - https://typescript-eslint.io/
 
+- Build rules with `yarn build`, create the doc file for your rule in `docs/rules/[YOUR_RULE_NAME].md` (empty file is ok) and run `yarn update:eslint-docs` to update rules docs.
+
 - Ask a review !
 
 - Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`)
@@ -79,6 +81,7 @@ Configs section would normally go here.
 | [mutation-decorator-return-type-mismatch](docs/rules/mutation-decorator-return-type-mismatch.md) | Parameter of Mutation Decorator should match the method's return type                                                                                                               |       |       |
 | [no-async-in-foreach](docs/rules/no-async-in-foreach.md)                                         | Array.prototype.forEach is not designed for asynchronous code                                                                                                                       |       |       |
 | [no-key-or-ref-prop](docs/rules/no-key-or-ref-prop.md)                                           | This rule forbids using props named `key` or `ref` in React function components, as they are reserved words and will not act as intended                                            |       |       |
+| [no-value-export-in-declaration-file](docs/rules/no-value-export-in-declaration-file.md)         | This rule forbids exporting values from TypeScript declaration files (ending in ".d.ts"), which can lead to bugs since these files are dropped during transpilation.                | ☑️    |       |
 | [property-decorator-type-mismatch](docs/rules/property-decorator-type-mismatch.md)               | Parameter of Type Decorator should match the property type                                                                                                                          |       |       |
 | [react-query-specify-typing](docs/rules/react-query-specify-typing.md)                           | Type parameters should always be specified when calling useQuery and useMutation from react-query                                                                                   | 🏃 ☑️ |       |
 | [redux-saga-no-sequential-actions](docs/rules/redux-saga-no-sequential-actions.md)               | description here                                                                                                                                                                    |       | 🏃 ☑️ |
