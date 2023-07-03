@@ -55,6 +55,8 @@ In your `.eslintrc.json` file :
   - https://eslint-utils.mysticatea.dev/
   - https://typescript-eslint.io/
 
+- Build rules with `yarn build`, create the doc file for your rule in `docs/rules/[YOUR_RULE_NAME].md` (empty file is ok) and run `yarn update:eslint-docs` to update rules docs.
+
 - Ask a review !
 
 - Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`)
