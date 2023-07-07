@@ -12,9 +12,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:eslint-plugin/recommended",
-    "plugin:@hokla/custom-rules/recommended"
-  ],
-  "rules": {
-    "@hokla/custom-rules/redux-saga-no-sequential-actions": "warn"
-  }
+    "plugin:@hokla/custom-rules/all"
+  ]
 }
