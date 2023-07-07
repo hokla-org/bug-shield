@@ -1,16 +1,24 @@
-import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
+import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
 
 type MessageIds = "missing-repository-generic-method-type";
 
 type Options = [];
 
+const isMemberExpression = (expr: TSESTree.Expression | TSESTree.PrivateIdentifier): expr is TSESTree.MemberExpression =>
+  expr.type === AST_NODE_TYPES.MemberExpression;
+const isIdentifier = (expr: TSESTree.Expression | TSESTree.PrivateIdentifier): expr is TSESTree.Identifier =>
+  expr.type === AST_NODE_TYPES.Identifier;
+
 const getCalleeObjectName = (
-  callee: TSESTree.LeftHandSideExpression
+  callee: TSESTree.Expression | TSESTree.PrivateIdentifier
 ): string => {
-  // I can't get the typing to work here.
-  // LeftHandSideExpression is a union of types where only a few cases have an "object" property (MemberExpression)
-  // @ts-ignore
-  return callee?.object?.name ?? callee?.object?.property?.name ?? "";
+  if (isIdentifier(callee)) {
+    return callee.name;
+  } else if (isMemberExpression(callee)) {
+    return getCalleeObjectName(callee.property);
+  }
+
+  return '';
 };
 
 const createRule = ESLintUtils.RuleCreator(
@@ -26,7 +34,9 @@ export const rule = createRule<Options, MessageIds>({
         callExpression: TSESTree.CallExpression
       ) {
         const callee = callExpression.callee;
-        const calleeObjectName = getCalleeObjectName(callee);
+
+        if (!isMemberExpression(callee)) return;
+        const calleeObjectName = getCalleeObjectName(callee.object);
 
         // Refine selection programmatically
         if (

@@ -25,6 +25,9 @@ ruleTester.run("{RULE_NAME}", rule, {
     `
     repository.recover<AnyType>({});
     `,
+    `
+    this.is.a.very.long.expression.repository.save<AnyType>({});
+    `,
   ],
   invalid: [
     {
@@ -60,6 +63,12 @@ ruleTester.run("{RULE_NAME}", rule, {
     {
       code: `
       repository.recover({});
+      `,
+      errors: [{ messageId: "missing-repository-generic-method-type" }],
+    },
+    {
+      code: `
+      this.is.a.very.long.expression.repository.save({});
       `,
       errors: [{ messageId: "missing-repository-generic-method-type" }],
     },
