@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug Build",
+      "program": "${workspaceFolder}/dist/index.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "type": "node",
       "name": "Launch Tests Debugger",
       "request": "launch",
@@ -13,7 +20,7 @@
       "disableOptimisticBPs": true,
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "yarn",
-      "args": ["jest"]
+      "args": ["start"]
     }
   ]
 }
