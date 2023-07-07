@@ -11,5 +11,6 @@ export function main() {
   console.log("Type some wrong code below and see your magic at work !!");
 
   // --- TEST YOUR LINTER RULE HERE
+  // --- `yarn build`, then put some invalid code bellow
   // --- DO NOT COMMIT CHANGES TO THIS FILE AS IT IS A PLAYGROUND
 }
