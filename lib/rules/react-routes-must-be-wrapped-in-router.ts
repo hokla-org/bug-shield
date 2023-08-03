@@ -1,8 +1,9 @@
+import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 import {
-  AST_NODE_TYPES,
-  ESLintUtils,
-  TSESTree,
-} from "@typescript-eslint/utils";
+  getFunctionalComponentName,
+  isJSXElement,
+  getJSXElementTagName,
+} from "../utils/common";
 
 type MessageIds =
   | "ambiguous-naming-for-component-returning-routes"
@@ -13,49 +14,6 @@ type Options = [];
 const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
-
-const isIdentifier = (
-  expr:
-    | TSESTree.Expression
-    | TSESTree.PrivateIdentifier
-    | TSESTree.JSXIdentifier
-): expr is TSESTree.Identifier => expr.type === AST_NODE_TYPES.Identifier;
-
-const isJSXElement = (
-  expr:
-    | TSESTree.Expression
-    | TSESTree.PrivateIdentifier
-    | TSESTree.Node
-    | undefined
-): expr is TSESTree.JSXElement => expr?.type === AST_NODE_TYPES.JSXElement;
-
-const isFunctionDeclarationWithoutName = (
-  expr: TSESTree.FunctionDeclaration | TSESTree.VariableDeclarator
-): expr is TSESTree.FunctionDeclarationWithOptionalName =>
-  expr.type === AST_NODE_TYPES.FunctionDeclaration && expr.id === null;
-
-const getFunctionalComponentName = (
-  functionNode: TSESTree.VariableDeclarator | TSESTree.FunctionDeclaration
-): string => {
-  if (isFunctionDeclarationWithoutName(functionNode)) {
-    return "";
-  }
-  if (isIdentifier(functionNode.id)) {
-    return functionNode.id.name;
-  }
-  return "";
-};
-
-const getJSXElementTagName = (JSXElement: TSESTree.JSXElement): string => {
-  const tagNameExpr = JSXElement.openingElement.name;
-  if (tagNameExpr.type === AST_NODE_TYPES.JSXNamespacedName) {
-    return tagNameExpr.name.name;
-  }
-  if (tagNameExpr.type === AST_NODE_TYPES.JSXIdentifier) {
-    return tagNameExpr.name;
-  }
-  return "";
-};
 
 export const rule = createRule<Options, MessageIds>({
   name: "react-routes-must-be-wrapped-in-router",
