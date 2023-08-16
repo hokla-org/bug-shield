@@ -1,5 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
-import { rule } from "../lib/rules/luxon-force-zone-in-datetime";
+import rule from "../lib/rules/luxon-force-zone-in-datetime";
 
 const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",

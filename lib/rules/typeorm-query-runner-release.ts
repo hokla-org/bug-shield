@@ -20,9 +20,7 @@ type NodeWithBody = TSESTree.Node & {
   body: TSESTree.BlockStatement;
 };
 
-export const ruleConfigs = [];
-
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "typeorm-query-runner-release",
   defaultOptions: [],
   create(context) {
@@ -97,3 +95,5 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
+
+export default {...rule, configs: []}

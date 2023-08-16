@@ -1,5 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
-import { rule } from "../lib/rules/react-query-specify-typing";
+import rule from "../lib/rules/react-query-specify-typing";
 
 const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",

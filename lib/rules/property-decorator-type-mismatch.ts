@@ -12,10 +12,8 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
-export const ruleConfigs = [];
-
 // Type: RuleModule<"uppercase", ...>
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "property-decorator-type-mismatch",
   defaultOptions: [],
   create(context) {
@@ -87,3 +85,5 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
+
+export default {...rule, configs: []}

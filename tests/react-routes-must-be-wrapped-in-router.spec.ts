@@ -1,5 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
-import { rule } from "../lib/rules/react-routes-must-be-wrapped-in-router";
+import rule from "../lib/rules/react-routes-must-be-wrapped-in-router";
 
 const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",

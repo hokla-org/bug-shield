@@ -15,9 +15,7 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
-export const ruleConfigs = ["test"];
-
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "react-routes-must-be-wrapped-in-router",
   defaultOptions: [],
   create(context) {
@@ -90,3 +88,5 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
+
+export default {...rule, configs: ['test']}

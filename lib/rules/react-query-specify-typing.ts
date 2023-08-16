@@ -8,9 +8,7 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
-export const ruleConfigs = [];
-
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "react-query-specify-typing",
   defaultOptions: [],
   create(context) {
@@ -48,3 +46,5 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
+
+export default {...rule, configs: []}
