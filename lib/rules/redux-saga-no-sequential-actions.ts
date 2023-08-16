@@ -13,6 +13,8 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
+export const ruleConfigs = [];
+
 export const rule = createRule<Options, MessageIds>({
   name: "redux-saga-no-sequential-actions",
   defaultOptions: [],
@@ -41,5 +43,3 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
-
-export default rule;

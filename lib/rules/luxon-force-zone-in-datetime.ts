@@ -20,6 +20,8 @@ type NodeWithBody = TSESTree.Node & {
   body: TSESTree.BlockStatement;
 };
 
+export const ruleConfigs = [];
+
 export const rule = createRule<Options, MessageIds>({
   name: "luxon-force-zone-in-datetime",
   defaultOptions: [],
@@ -64,5 +66,3 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
-
-export default rule;

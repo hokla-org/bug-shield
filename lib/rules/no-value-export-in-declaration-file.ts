@@ -11,6 +11,8 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
+export const ruleConfigs = [];
+
 export const rule = createRule<Options, MessageIds>({
   name: "no-value-export-in-declaration-file",
   defaultOptions: [],
@@ -43,5 +45,3 @@ export const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
-
-export default rule;
