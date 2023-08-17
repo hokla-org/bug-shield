@@ -4,7 +4,7 @@ import { Config, PLUGIN_NAME, getConfigCustomRules } from "../utils/config";
 export const CONFIG_NAME = "test"
 
 export const getConfig = (
-  allRules: { [ruleName: string]: RuleModule<string, [], RuleListener> & { configs : string[]}} 
+  allRules: { [ruleName: string]: RuleModule<string, [], RuleListener> & { configs : string[]}}
 ): { [configName: string]: Config} => {
   return {
     [CONFIG_NAME]: {
