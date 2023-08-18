@@ -7,6 +7,8 @@ type ConfigRules = {[k: string]: false | "error" | "strict" | "warn"}
 export interface Config {
     plugins: string[];
     rules: ConfigRules,
+    extends?: string[];
+    parserOptions?: unknown;
 }
 
 export function getConfigCustomRules(
