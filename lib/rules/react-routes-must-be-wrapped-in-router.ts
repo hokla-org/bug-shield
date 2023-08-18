@@ -89,4 +89,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: ['test']}
+export default {...rule, configs: []}
