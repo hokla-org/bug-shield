@@ -11,6 +11,7 @@
   "devDependencies": {
     "@hokla/eslint-plugin-custom-rules": "link:./dist",
     "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^5.15.0",
     "@typescript-eslint/utils": "^5.15.0",
     "eslint": "^8.11.0",
