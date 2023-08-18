@@ -36,7 +36,12 @@ jobs:
 
       - name: Install Dependencies
         run: yarn
-
+      - name: Build
+        run: yarn build
+      - name: Lint
+        run: yarn lint
+      - name: Type-check
+        run: yarn typecheck
       - name: Run Unit tests
         run: yarn test
 

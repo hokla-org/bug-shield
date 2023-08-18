@@ -12,6 +12,7 @@ const ruleTesterDeclarationFile = new ESLintUtils.RuleTester({
 
 // We want to forbid value exports only in declaration files, so here we mock being in one.
 // In the next test below, we mock being in a normal file, where value exports are allowed.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 ruleTesterDeclarationFile.getFilename = () => 'declaration-file.d.ts';
 
@@ -53,6 +54,7 @@ const ruleTesterNormalFile = new ESLintUtils.RuleTester({
   }
 });
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 ruleTesterNormalFile.getFilename = () => 'normal-file.ts';
 

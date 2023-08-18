@@ -26,8 +26,9 @@
   },
   "scripts": {
     "build": "tsc && cp lib/index.js dist/",
-    "lint": "eslint --ext .ts \"src/**/*.+(ts)\"",
+    "lint": "eslint --ext .ts,.tsx .",
     "test": "jest",
+    "typecheck": "tsc --noEmit",
     "update:eslint-docs": "eslint-doc-generator"
   },
   "directories": {
