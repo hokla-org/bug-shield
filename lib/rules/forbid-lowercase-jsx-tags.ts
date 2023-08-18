@@ -1,5 +1,4 @@
 import {
-  AST_NODE_TYPES,
   ESLintUtils,
   TSESTree,
 } from "@typescript-eslint/utils";
@@ -15,10 +14,6 @@ const createRule = ESLintUtils.RuleCreator(
 // Trying to follow example from this blog :
 // https://ryankubik.com/blog/eslint-internal-state#Building-More-Complex-ESLint-Rules
 // https://astexplorer.net/#/gist/1ff99fca3f85c2e7676ac041a88d7b53/179cf88e3a77c133741d9f96f0dc982b9f11ce4d
-
-type NodeWithBody = TSESTree.Node & {
-  body: TSESTree.BlockStatement;
-};
 
 const rule = createRule<Options, MessageIds>({
   name: "forbid-lowercase-jsx-tags",
