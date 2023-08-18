@@ -20,7 +20,7 @@ type NodeWithBody = TSESTree.Node & {
   body: TSESTree.BlockStatement;
 };
 
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "forbid-lowercase-jsx-tags",
   defaultOptions: [],
   create(context) {
@@ -52,4 +52,4 @@ export const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default rule;
+export default {...rule, configs: []}

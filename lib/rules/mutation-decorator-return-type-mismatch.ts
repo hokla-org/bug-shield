@@ -13,7 +13,7 @@ const createRule = ESLintUtils.RuleCreator(
 );
 
 // Type: RuleModule<"uppercase", ...>
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "mutation-decorator-return-type-mismatch",
   defaultOptions: [],
   create(context) {
@@ -97,4 +97,4 @@ export const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default rule;
+export default {...rule, configs: []}

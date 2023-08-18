@@ -1,5 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
-import { rule } from "../lib/rules/no-async-in-foreach";
+import rule from "../../lib/rules/no-async-in-foreach";
 
 const ruleTester = new ESLintUtils.RuleTester({
   parser: "@typescript-eslint/parser",

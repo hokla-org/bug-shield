@@ -8,7 +8,7 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`
 );
 
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: "no-async-in-foreach",
   defaultOptions: [],
   create(context) {
@@ -38,4 +38,4 @@ export const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default rule;
+export default {...rule, configs: ['test']}

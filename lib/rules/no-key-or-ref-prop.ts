@@ -40,7 +40,7 @@ const isTsTypeAliasDeclaration = (node: TSESTree.Node | undefined): node is TSES
   return node !== undefined && node.type === 'TSTypeAliasDeclaration';
 }
 
-export const rule = createRule<Options, MessageIds>({
+const rule = createRule<Options, MessageIds>({
   name: 'no-key-or-ref-prop',
   defaultOptions: [],
   create(context) {
@@ -103,4 +103,4 @@ export const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default rule;
+export default {...rule, configs: []}
