@@ -26,6 +26,8 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+      - name: Documentation-check
+        run: yarn check:eslint-docs
       - name: Lint
         run: yarn lint
       - name: Type-check
