@@ -13,7 +13,7 @@ yarn add --dev @hokla/eslint-plugin-custom-rules
 **Optional:** In case you also need to setup eslint :
 
 ```
-yarn add --dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
+yarn add --dev eslint typescript
 ```
 
 ## Use rules in your projects
@@ -22,19 +22,18 @@ In your `.eslintrc.json` file :
 
 ```json
 {
-  "root": true,
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@hokla/custom-rules/recommended"
-  ],
-  "plugins": ["@typescript-eslint"],
-  "parser": "@typescript-eslint/parser",
-  // In case you want to customize the level of warning (default to 'warn')
-  "rules": {
-    "@hokla/custom-rules/react-query-specify-typing": "warn" // "error" | "warn
-  }
+    "root": true,
+    "extends": [
+      "eslint:recommended",
+      "plugin:@hokla/custom-rules/recommended"
+      // You can choose your config by replacing recommended here
+    ],
+    "plugins": ["@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
+    // In case you want to customize the level of warning (default to 'warn')
+    "rules": {
+      "@hokla/custom-rules/react-query-specify-typing": "warn" // "error" | "warn
+    }
 }
 ```
 
