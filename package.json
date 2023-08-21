@@ -34,6 +34,8 @@
     "postpack": "pinst --enable",
     "test": "jest",
     "typecheck": "tsc --noEmit",
+    "check:eslint-docs": "eslint-doc-generator --check",
+    "create:eslint-docs": "eslint-doc-generator --init-rule-docs",
     "update:eslint-docs": "eslint-doc-generator"
   },
   "directories": {
