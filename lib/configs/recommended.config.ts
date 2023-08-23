@@ -13,7 +13,11 @@ export const getConfig = (allRules: {
 }): { [configName: string]: Config } => {
   return {
     [CONFIG_NAME]: {
-      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript",
+      ],
       plugins: [PLUGIN_NAME],
       rules: {
         ...getConfigCustomRules(CONFIG_NAME, allRules),

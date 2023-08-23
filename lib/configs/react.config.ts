@@ -17,6 +17,7 @@ export const getConfig = (allRules: {
         "plugin:@hokla/bug-shield/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
       ],
       plugins: [PLUGIN_NAME],
       rules: {
