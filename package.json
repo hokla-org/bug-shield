@@ -36,7 +36,8 @@
     "typecheck": "tsc --noEmit",
     "check:eslint-docs": "eslint-doc-generator --check",
     "create:eslint-docs": "eslint-doc-generator --init-rule-docs",
-    "update:eslint-docs": "eslint-doc-generator"
+    "update:eslint-docs": "eslint-doc-generator",
+    "rule:generate": "yarn ts-node generate/generateNewRule.ts && yarn build && yarn create:eslint-docs"
   },
   "directories": {
     "lib": "lib",
