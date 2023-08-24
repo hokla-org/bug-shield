@@ -9,7 +9,7 @@ type MessageIds = "missing-zone-in-datetime";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 // Trying to follow example from this blog :
@@ -23,24 +23,31 @@ const rule = createRule<Options, MessageIds>({
     return {
       // Select a node from the AST
       ["CallExpression[callee.property.name='fromISO']"](
-        node: TSESTree.CallExpression
+        node: TSESTree.CallExpression,
       ) {
-        const objectExpressionArgument = node.arguments.find(argument => argument.type === AST_NODE_TYPES.ObjectExpression);
-        
+        const objectExpressionArgument = node.arguments.find(
+          (argument) => argument.type === AST_NODE_TYPES.ObjectExpression,
+        );
+
         if (objectExpressionArgument === undefined) {
           return context.report({
-            messageId: 'missing-zone-in-datetime',
+            messageId: "missing-zone-in-datetime",
             node: node,
           });
         }
 
-        const hasZoneProperty = ((objectExpressionArgument as unknown as TSESTree.ObjectExpression)
-          .properties
-          .find(property => ((property as TSESTree.Property).key as TSESTree.Identifier).name === 'zone')) !== undefined;
-        
+        const hasZoneProperty =
+          (
+            objectExpressionArgument as unknown as TSESTree.ObjectExpression
+          ).properties.find(
+            (property) =>
+              ((property as TSESTree.Property).key as TSESTree.Identifier)
+                .name === "zone",
+          ) !== undefined;
+
         if (!hasZoneProperty) {
           return context.report({
-            messageId: 'missing-zone-in-datetime',
+            messageId: "missing-zone-in-datetime",
             node: node,
           });
         }
@@ -50,15 +57,14 @@ const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "warn",
-      description:
-        "TODO",
+      description: "TODO",
     },
     messages: {
-      "missing-zone-in-datetime": 'TODO'
+      "missing-zone-in-datetime": "TODO",
     },
     type: "problem",
     schema: [],
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };

@@ -12,7 +12,7 @@ type MessageIds =
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -20,7 +20,7 @@ const rule = createRule<Options, MessageIds>({
   defaultOptions: [],
   create(context) {
     const sendReportWhenFunctionalComponentDoesNotEndWithRoutes = (
-      node: TSESTree.VariableDeclarator | TSESTree.FunctionDeclaration
+      node: TSESTree.VariableDeclarator | TSESTree.FunctionDeclaration,
     ) => {
       const functionalComponentName = getFunctionalComponentName(node);
       if (!functionalComponentName.endsWith("Routes")) {
@@ -32,21 +32,21 @@ const rule = createRule<Options, MessageIds>({
     };
     return {
       ["VariableDeclarator:has(ReturnStatement > JSXElement > JSXOpeningElement[name.name=/.*Routes/])"](
-        variableDeclarator: TSESTree.VariableDeclarator
+        variableDeclarator: TSESTree.VariableDeclarator,
       ) {
         sendReportWhenFunctionalComponentDoesNotEndWithRoutes(
-          variableDeclarator
+          variableDeclarator,
         );
       },
       ["FunctionDeclaration:has(ReturnStatement > JSXElement > JSXOpeningElement[name.name=/.*Routes/])"](
-        functionDeclaration: TSESTree.FunctionDeclaration
+        functionDeclaration: TSESTree.FunctionDeclaration,
       ) {
         sendReportWhenFunctionalComponentDoesNotEndWithRoutes(
-          functionDeclaration
+          functionDeclaration,
         );
       },
       ["JSXElement JSXElement JSXOpeningElement[name.name=/.*Routes/]"](
-        routesNode: TSESTree.JSXOpeningElement
+        routesNode: TSESTree.JSXOpeningElement,
       ) {
         const DEPTH_SEARCH_LIMIT = 30;
 
@@ -89,4 +89,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: ["react"]}
+export default { ...rule, configs: ["react"] };

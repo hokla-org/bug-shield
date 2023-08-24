@@ -1,16 +1,23 @@
-import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils';
+import {
+  AST_NODE_TYPES,
+  ESLintUtils,
+  TSESTree,
+} from "@typescript-eslint/utils";
 
 type MessageIds = "missing-repository-generic-method-type";
 
 type Options = [];
 
-const isMemberExpression = (expr: TSESTree.Expression | TSESTree.PrivateIdentifier): expr is TSESTree.MemberExpression =>
+const isMemberExpression = (
+  expr: TSESTree.Expression | TSESTree.PrivateIdentifier,
+): expr is TSESTree.MemberExpression =>
   expr.type === AST_NODE_TYPES.MemberExpression;
-const isIdentifier = (expr: TSESTree.Expression | TSESTree.PrivateIdentifier): expr is TSESTree.Identifier =>
-  expr.type === AST_NODE_TYPES.Identifier;
+const isIdentifier = (
+  expr: TSESTree.Expression | TSESTree.PrivateIdentifier,
+): expr is TSESTree.Identifier => expr.type === AST_NODE_TYPES.Identifier;
 
 const getCalleeObjectName = (
-  callee: TSESTree.Expression | TSESTree.PrivateIdentifier
+  callee: TSESTree.Expression | TSESTree.PrivateIdentifier,
 ): string => {
   if (isIdentifier(callee)) {
     return callee.name;
@@ -18,11 +25,11 @@ const getCalleeObjectName = (
     return getCalleeObjectName(callee.property);
   }
 
-  return '';
+  return "";
 };
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -31,7 +38,7 @@ const rule = createRule<Options, MessageIds>({
   create(context) {
     return {
       "CallExpression[callee.property.name='save'], CallExpression[callee.property.name='softRemove'], CallExpression[callee.property.name='recover']"(
-        callExpression: TSESTree.CallExpression
+        callExpression: TSESTree.CallExpression,
       ) {
         const callee = callExpression.callee;
 
@@ -71,4 +78,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };

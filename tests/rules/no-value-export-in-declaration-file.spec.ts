@@ -6,15 +6,15 @@ const ruleTesterDeclarationFile = new ESLintUtils.RuleTester({
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
-    }
-  }
+    },
+  },
 });
 
 // We want to forbid value exports only in declaration files, so here we mock being in one.
 // In the next test below, we mock being in a normal file, where value exports are allowed.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-ruleTesterDeclarationFile.getFilename = () => 'declaration-file.d.ts';
+ruleTesterDeclarationFile.getFilename = () => "declaration-file.d.ts";
 
 ruleTesterDeclarationFile.run("{RULE_NAME}", rule, {
   valid: [
@@ -50,13 +50,13 @@ const ruleTesterNormalFile = new ESLintUtils.RuleTester({
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
-    }
-  }
+    },
+  },
 });
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-ruleTesterNormalFile.getFilename = () => 'normal-file.ts';
+ruleTesterNormalFile.getFilename = () => "normal-file.ts";
 
 ruleTesterNormalFile.run("{RULE_NAME}", rule, {
   valid: [

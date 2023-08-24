@@ -1,14 +1,11 @@
-import {
-  ESLintUtils,
-  TSESTree,
-} from "@typescript-eslint/utils";
+import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
 type MessageIds = "RULE_NAME_PLACEHOLDER";
 
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -17,26 +14,25 @@ const rule = createRule<Options, MessageIds>({
   create(context) {
     return {
       // Select a node from the AST
-      ["TODO"](node: TSESTree.JSXIdentifier) {  
-          return context.report({
-            messageId: "RULE_NAME_PLACEHOLDER",
-            node: node,
-          });
+      ["TODO"](node: TSESTree.JSXIdentifier) {
+        return context.report({
+          messageId: "RULE_NAME_PLACEHOLDER",
+          node: node,
+        });
       },
     };
   },
   meta: {
     docs: {
       recommended: "error",
-      description: "TODO"
+      description: "TODO",
     },
     messages: {
-      "RULE_NAME_PLACEHOLDER":
-        "TODO",
+      "RULE_NAME_PLACEHOLDER": "TODO",
     },
     type: "problem",
     schema: [],
   },
 });
 
-export default {...rule, configs: ["TODO"]}
+export default { ...rule, configs: ["TODO"] };

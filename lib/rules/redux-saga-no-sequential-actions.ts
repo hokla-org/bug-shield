@@ -10,7 +10,7 @@ See defect https://www.notion.so/m33/Timebox-1h-APP-Screen-is-blinking-while-log
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -20,7 +20,7 @@ const rule = createRule<Options, MessageIds>({
     return {
       // Select a node that yields a put immediately after another yield put
       ["ExpressionStatement:has(YieldExpression CallExpression[callee.name = 'put']) + ExpressionStatement:has(YieldExpression CallExpression[callee.name = 'put'])"](
-        node: TSESTree.CallExpression
+        node: TSESTree.CallExpression,
       ) {
         return context.report({
           messageId: "sequential-redux-actions",
@@ -42,4 +42,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };

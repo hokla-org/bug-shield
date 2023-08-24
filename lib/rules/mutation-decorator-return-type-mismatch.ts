@@ -9,7 +9,7 @@ type MessageIds = "mutation-decorator-return-type-mismatch";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 // Type: RuleModule<"uppercase", ...>
@@ -18,13 +18,13 @@ const rule = createRule<Options, MessageIds>({
   defaultOptions: [],
   create(context) {
     function isMethodDefinition(
-      node?: TSESTree.Node
+      node?: TSESTree.Node,
     ): node is TSESTree.MethodDefinition {
       return node?.type === AST_NODE_TYPES.MethodDefinition;
     }
 
     function getMethodDefinitionFromDecorator(
-      node: TSESTree.Decorator
+      node: TSESTree.Decorator,
     ): TSESTree.MethodDefinition | undefined {
       const parent = node.parent;
 
@@ -35,13 +35,13 @@ const rule = createRule<Options, MessageIds>({
     }
 
     function getMethodReturnType(
-      node: TSESTree.MethodDefinition
+      node: TSESTree.MethodDefinition,
     ): TSESTree.TSTypeAnnotation["typeAnnotation"] | undefined {
       return node?.value?.returnType?.typeAnnotation;
     }
 
     function getMutationDecoratorReturnType(
-      node: TSESTree.Decorator
+      node: TSESTree.Decorator,
     ): TSESTree.BlockStatement | TSESTree.Expression | undefined {
       if (node.expression.type !== AST_NODE_TYPES.CallExpression)
         return undefined;
@@ -57,7 +57,7 @@ const rule = createRule<Options, MessageIds>({
 
     return {
       ['MethodDefinition > Decorator[expression.callee.name="Mutation"]'](
-        node: TSESTree.Decorator
+        node: TSESTree.Decorator,
       ) {
         const methodDefinition = getMethodDefinitionFromDecorator(node);
         if (methodDefinition === undefined) return;
@@ -97,4 +97,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };

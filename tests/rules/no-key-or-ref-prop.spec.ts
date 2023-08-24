@@ -30,7 +30,7 @@ ruleTester.run("{RULE_NAME}", rule, {
       ref: any;
       key: any;
     };
-    `
+    `,
   ],
   invalid: [
     {

@@ -5,7 +5,7 @@ type MessageIds = "no-async-in-foreach";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -15,7 +15,7 @@ const rule = createRule<Options, MessageIds>({
     return {
       // Select a node from the AST
       ["CallExpression[callee.property.name='forEach']:has(ArrowFunctionExpression[async='true'])"](
-        node: TSESTree.CallExpression
+        node: TSESTree.CallExpression,
       ) {
         context.report({
           messageId: "no-async-in-foreach",
@@ -27,7 +27,8 @@ const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "error",
-      description: "Array.prototype.forEach is not designed for asynchronous code",
+      description:
+        "Array.prototype.forEach is not designed for asynchronous code",
     },
     messages: {
       "no-async-in-foreach":
@@ -38,4 +39,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: ['recommended']}
+export default { ...rule, configs: ["recommended"] };
