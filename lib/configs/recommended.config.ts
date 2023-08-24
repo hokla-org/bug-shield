@@ -17,6 +17,7 @@ export const getConfig = (allRules: {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript",
+        "prettier"
       ],
       plugins: [PLUGIN_NAME],
       rules: {
