@@ -9,7 +9,7 @@ ruleTester.run("{RULE_NAME}", rule, {
   valid: [
     `
     TODO
-    `
+    `,
   ],
   invalid: [
     {
@@ -20,4 +20,3 @@ ruleTester.run("{RULE_NAME}", rule, {
     },
   ],
 });
-

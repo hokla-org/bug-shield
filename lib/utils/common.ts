@@ -4,7 +4,7 @@ export const isIdentifier = (
   expr:
     | TSESTree.Expression
     | TSESTree.PrivateIdentifier
-    | TSESTree.JSXIdentifier
+    | TSESTree.JSXIdentifier,
 ): expr is TSESTree.Identifier => expr.type === AST_NODE_TYPES.Identifier;
 
 export const isJSXElement = (
@@ -12,16 +12,16 @@ export const isJSXElement = (
     | TSESTree.Expression
     | TSESTree.PrivateIdentifier
     | TSESTree.Node
-    | undefined
+    | undefined,
 ): expr is TSESTree.JSXElement => expr?.type === AST_NODE_TYPES.JSXElement;
 
 export const isFunctionDeclarationWithoutName = (
-  expr: TSESTree.FunctionDeclaration | TSESTree.VariableDeclarator
+  expr: TSESTree.FunctionDeclaration | TSESTree.VariableDeclarator,
 ): expr is TSESTree.FunctionDeclarationWithOptionalName =>
   expr.type === AST_NODE_TYPES.FunctionDeclaration && expr.id === null;
 
 export const getFunctionalComponentName = (
-  functionNode: TSESTree.VariableDeclarator | TSESTree.FunctionDeclaration
+  functionNode: TSESTree.VariableDeclarator | TSESTree.FunctionDeclaration,
 ): string => {
   if (isFunctionDeclarationWithoutName(functionNode)) {
     return "";
@@ -33,7 +33,7 @@ export const getFunctionalComponentName = (
 };
 
 export const getJSXElementTagName = (
-  JSXElement: TSESTree.JSXElement
+  JSXElement: TSESTree.JSXElement,
 ): string => {
   const tagNameExpr = JSXElement.openingElement.name;
   if (tagNameExpr.type === AST_NODE_TYPES.JSXNamespacedName) {

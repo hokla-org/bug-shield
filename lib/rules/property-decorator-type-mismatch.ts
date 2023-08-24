@@ -9,7 +9,7 @@ type MessageIds = "property-decorator-type-mismatch";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 // Type: RuleModule<"uppercase", ...>
@@ -18,7 +18,7 @@ const rule = createRule<Options, MessageIds>({
   defaultOptions: [],
   create(context) {
     function getPropertyDefinitionFromDecorator(
-      node: TSESTree.Decorator
+      node: TSESTree.Decorator,
     ): TSESTree.PropertyDefinition | null {
       const parent = node.parent;
 
@@ -45,14 +45,14 @@ const rule = createRule<Options, MessageIds>({
     }
 
     function isPropertyDefinition(
-      node?: TSESTree.Node
+      node?: TSESTree.Node,
     ): node is TSESTree.PropertyDefinition {
       return node?.type === AST_NODE_TYPES.PropertyDefinition;
     }
 
     return {
       ['PropertyDefinition > Decorator[expression.callee.name="Type"]'](
-        node: TSESTree.Decorator
+        node: TSESTree.Decorator,
       ) {
         const propertyDefinition = getPropertyDefinitionFromDecorator(node);
 
@@ -86,4 +86,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: ["recommended"]}
+export default { ...rule, configs: ["recommended"] };

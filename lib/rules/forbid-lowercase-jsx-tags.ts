@@ -1,14 +1,11 @@
-import {
-  ESLintUtils,
-  TSESTree,
-} from "@typescript-eslint/utils";
+import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
 type MessageIds = "forbid-lowercase-jsx-tags";
 
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 // Trying to follow example from this blog :
@@ -47,4 +44,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };

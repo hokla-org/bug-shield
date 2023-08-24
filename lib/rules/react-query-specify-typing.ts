@@ -5,7 +5,7 @@ type MessageIds = "missing-use-query-types" | "missing-use-mutation-types";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 const rule = createRule<Options, MessageIds>({
@@ -15,7 +15,7 @@ const rule = createRule<Options, MessageIds>({
     return {
       // Select a node from the AST
       ["CallExpression:matches([callee.name=useQuery], [callee.name=/useMutation*/])"](
-        node: TSESTree.CallExpression
+        node: TSESTree.CallExpression,
       ) {
         if (!node.typeParameters) {
           const messageId =
@@ -47,4 +47,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: ["react"]}
+export default { ...rule, configs: ["react"] };

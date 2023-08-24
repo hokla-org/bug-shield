@@ -22,7 +22,7 @@ ruleTester.run("{RULE_NAME}", rule, {
         DATETIME_DISPLAY_FORMAT_STRING
       )
     : '-';
-    `
+    `,
   ],
   invalid: [
     {
@@ -47,6 +47,5 @@ ruleTester.run("{RULE_NAME}", rule, {
       `,
       errors: [{ messageId: "missing-zone-in-datetime" }],
     },
-    
   ],
 });

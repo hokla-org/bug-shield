@@ -109,3 +109,6 @@ dist
 # Documentation
 README.md
 docs/
+
+# Rule files boilerplates
+generate/

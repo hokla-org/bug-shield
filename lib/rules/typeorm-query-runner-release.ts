@@ -9,7 +9,7 @@ type MessageIds = "missing-query-runner-final-release";
 type Options = [];
 
 const createRule = ESLintUtils.RuleCreator(
-  (name) => `https://hokla.com/rule/${name}`
+  (name) => `https://hokla.com/rule/${name}`,
 );
 
 // Trying to follow example from this blog :
@@ -53,7 +53,7 @@ const rule = createRule<Options, MessageIds>({
     return {
       // Select a node from the AST
       ["CallExpression[callee.property.name='createQueryRunner']"](
-        node: TSESTree.CallExpression
+        node: TSESTree.CallExpression,
       ) {
         // Block Statement
         const scopeNode = context.getScope()?.block;
@@ -96,4 +96,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default {...rule, configs: []}
+export default { ...rule, configs: [] };
