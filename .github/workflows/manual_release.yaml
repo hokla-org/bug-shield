@@ -60,22 +60,3 @@ jobs:
           tag-prefix: "v"
           version-type: ${{ github.event.inputs.version-type }}
           commit-message: "chore(package.json): bump version to {{version}}"
-
-  PublishToNpm:
-    needs: BumpVersion
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
-
-      - run: yarn
-      - run: yarn build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
