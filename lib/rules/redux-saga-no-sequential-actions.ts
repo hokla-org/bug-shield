@@ -32,7 +32,8 @@ const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "warn",
-      description: "description here",
+      description:
+        "forbid multiple sequential action calls in redux dispatcher",
     },
     messages: {
       "sequential-redux-actions": DESCRIPTION,
@@ -42,4 +43,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: [] };
+export default { ...rule, configs: ["redux"] };
