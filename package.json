@@ -1,6 +1,6 @@
 {
-  "version": "3.0.0",
-  "name": "@hokla/eslint-plugin-custom-rules",
+  "version": "0.0.0",
+  "name": "@hokla/eslint-plugin-bug-shield",
   "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
-    "@hokla/eslint-plugin-custom-rules": "link:./dist",
+    "@hokla/eslint-plugin-bug-shield": "link:./dist",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/parser": "^5.15.0",
     "@typescript-eslint/utils": "^5.15.0",
@@ -41,18 +41,21 @@
     "rule:generate": "yarn ts-node generate/generateNewRule.ts && yarn build && yarn create:eslint-docs"
   },
   "directories": {
+    "doc": "docs",
     "lib": "lib",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hokla-org/eslint-plugin-custom-rules.git"
+    "url": "git+https://github.com/hokla-org/bug-shield.git"
   },
   "keywords": [
-    "eslint"
+    "eslint",
+    "linter",
+    "bug detection"
   ],
   "bugs": {
-    "url": "https://github.com/hokla-org/eslint-plugin-custom-rules/issues"
+    "url": "https://github.com/hokla-org/bug-shield/issues"
   },
-  "homepage": "https://github.com/hokla-org/eslint-plugin-custom-rules#readme"
+  "homepage": "https://github.com/hokla-org/bug-shield#readme"
 }

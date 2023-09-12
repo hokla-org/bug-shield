@@ -7,7 +7,7 @@ const config = {
     ["react", "🌐"],
   ],
   ignoreConfig: ["all", "test"],
-  urlConfigs: "https://github.com/hokla-org/eslint-plugin-custom-rules",
+  urlConfigs: "https://github.com/hokla-org/eslint-plugin-bug-shield",
 };
 
 module.exports = config;

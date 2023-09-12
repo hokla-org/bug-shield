@@ -39,4 +39,4 @@ Good code samples :
 
 Please inform everyone to upgrade the hokla eslint plugin to benefit from your piece !
 https://hokla.slack.com/archives/C02CZUN4QUW
-Tell them to run `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`
+Tell them to run `yarn upgrade @hokla/eslint-plugin-bug-shield` or `npm update @hokla/eslint-plugin-bug-shield`

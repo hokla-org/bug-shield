@@ -7,7 +7,7 @@ Recommended custom eslint rules at Hokla
 ## Install
 
 ```
-yarn add --dev @hokla/eslint-plugin-custom-rules
+yarn add --dev @hokla/eslint-plugin-bug-shield
 ```
 
 **Optional:** In case you also need to setup eslint :
@@ -27,13 +27,13 @@ In your `.eslintrc.json` file :
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@hokla/custom-rules/recommended"
+    "plugin:@hokla/bug-shield/recommended"
   ],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   // In case you want to customize the level of warning (default to 'warn')
   "rules": {
-    "@hokla/custom-rules/react-query-specify-typing": "warn" // "error" | "warn
+    "@hokla/bug-shield/react-query-specify-typing": "warn" // "error" | "warn
   }
 }
 ```
@@ -42,7 +42,7 @@ In your `.eslintrc.json` file :
 
 # Contribute
 
-- Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-custom-rules/compare
+- Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-bug-shield/compare
 
 - Write a test with valid and invalid code samples
 
@@ -59,7 +59,7 @@ In your `.eslintrc.json` file :
 
 - Ask a review !
 
-- Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-custom-rules` or `npm update @hokla/eslint-plugin-custom-rules`)
+- Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-bug-shield` or `npm update @hokla/eslint-plugin-bug-shield`)
 
 ## Configs
 
@@ -69,10 +69,10 @@ Configs section would normally go here.
 
 <!-- begin auto-generated rules list -->
 
-💼 [Configurations](https://github.com/hokla-org/eslint-plugin-custom-rules) enabled in.\
-⚠️ [Configurations](https://github.com/hokla-org/eslint-plugin-custom-rules) set to warn in.\
-🌐 Set in the `react` [configuration](https://github.com/hokla-org/eslint-plugin-custom-rules).\
-☑️ Set in the `recommended` [configuration](https://github.com/hokla-org/eslint-plugin-custom-rules).
+💼 [Configurations](https://github.com/hokla-org/eslint-plugin-bug-shield) enabled in.\
+⚠️ [Configurations](https://github.com/hokla-org/eslint-plugin-bug-shield) set to warn in.\
+🌐 Set in the `react` [configuration](https://github.com/hokla-org/eslint-plugin-bug-shield).\
+☑️ Set in the `recommended` [configuration](https://github.com/hokla-org/eslint-plugin-bug-shield).
 
 | Name                                                                                                               | Description                                                                                                                                                                         | 💼 | ⚠️ |
 | :----------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- | :- |

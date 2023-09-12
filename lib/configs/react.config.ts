@@ -14,7 +14,7 @@ export const getConfig = (allRules: {
   return {
     [CONFIG_NAME]: {
       extends: [
-        "plugin:@hokla/custom-rules/recommended",
+        "plugin:@hokla/bug-shield/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
       ],

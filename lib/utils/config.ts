@@ -3,7 +3,7 @@ import {
   RuleModule,
 } from "@typescript-eslint/utils/dist/ts-eslint";
 
-export const PLUGIN_NAME = "@hokla/custom-rules";
+export const PLUGIN_NAME = "@hokla/bug-shield";
 
 type ConfigRules = { [k: string]: false | "error" | "strict" | "warn" };
 
