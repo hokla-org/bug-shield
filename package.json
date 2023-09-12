@@ -4,7 +4,7 @@
   "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "description": "ESLint rules to comply with Hokla's best development practices",
+  "description": "Kill your bugs for good accross all projects with custom ESLint rules and configurations",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "eslint-plugin-react": "^7.33.2",

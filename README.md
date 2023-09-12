@@ -1,65 +1,64 @@
-# Hokla's Eslint plugin
+# Bug Shield (ESLint plugin)
 
-Recommended custom eslint rules at Hokla
+<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100"> 
 
-# How to use
+## Shield your project :
 
-## Install
+#### Install
 
 ```
 yarn add --dev @hokla/eslint-plugin-bug-shield
 ```
 
-**Optional:** In case you also need to setup eslint :
-
-```
-yarn add --dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
-```
-
-## Use rules in your projects
-
+#### Choose the configs made for your project
 In your `.eslintrc.json` file :
 
 ```json
 {
-  "root": true,
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@hokla/bug-shield/recommended"
+    // [...],
+    "plugin:@hokla/bug-shield/recommended",
+    "plugin:@hokla/bug-shield/react"
   ],
-  "plugins": ["@typescript-eslint"],
-  "parser": "@typescript-eslint/parser",
-  // In case you want to customize the level of warning (default to 'warn')
+  // In case you want to opt-out from specific rules:
   "rules": {
-    "@hokla/bug-shield/react-query-specify-typing": "warn" // "error" | "warn
+    "@hokla/bug-shield/react-query-specify-typing": "off" // "off" | "warn"
   }
 }
 ```
 
-                   |
+## Kill bugs across many projects by crafting the shield :
 
-# Contribute
+#### Ensure a shield does not already exist
 
-- Create a new branch and PR: https://github.com/hokla-org/eslint-plugin-bug-shield/compare
+#### Generate a new rule
+```
+yarn rule:generate <your-rule-name>
+```
 
-- Write a test with valid and invalid code samples
+#### Write unit tests
 
-- Use online tools to specify AST selectors and implement the rule
-
+#### Implement the rule
+- Find a good AST selector :
   - https://astexplorer.net/
   - https://estools.github.io/esquery/
   - https://typescript-eslint.io/play
   - https://www.notion.so/m33/Faire-ses-propres-r-gles-de-linter-AST-801c068aa15d40a4b39bc0ceff5e49aa
+- Debug the test in live to check the nature of the selected node
+- Implement the rule
   - https://eslint-utils.mysticatea.dev/
   - https://typescript-eslint.io/
 
-- Build rules with `yarn build`, create the doc file for your rule in `docs/rules/[YOUR_RULE_NAME].md` (empty file is ok) and run `yarn update:eslint-docs` to update rules docs.
+#### Test your rule on the playground
+- Build `yarn build`
+- Paste some wrong code in `./src/playground.tsx`
+- Assess that the working behavior
 
-- Ask a review !
 
-- Let the world know (slack the teams you want to share it with and tell them to upgrade by running `yarn upgrade @hokla/eslint-plugin-bug-shield` or `npm update @hokla/eslint-plugin-bug-shield`)
+#### Ask for a review !
+
+#### Let the world know the shield is tougher !
+- Let the world know they can improve their protection by running `yarn upgrade @hokla/eslint-plugin-bug-shield` or `npm update @hokla/eslint-plugin-bug-shield`.
 
 ## Configs
 
