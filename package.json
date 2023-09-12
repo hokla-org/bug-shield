@@ -1,10 +1,10 @@
 {
-  "version": "3.0.0",
-  "name": "@hokla/eslint-plugin-custom-rules",
+  "version": "0.0.0",
+  "name": "@hokla/eslint-plugin-bug-shield",
   "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "description": "ESLint rules to comply with Hokla's best development practices",
+  "description": "Kill your bugs for good accross all projects with custom ESLint rules and configurations",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "eslint-plugin-react": "^7.33.2",
@@ -12,10 +12,12 @@
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
-    "@hokla/eslint-plugin-custom-rules": "link:./dist",
+    "@hokla/eslint-plugin-bug-shield": "link:./dist",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/parser": "^5.15.0",
     "@typescript-eslint/utils": "^5.15.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.11.0",
     "eslint-doc-generator": "^1.4.3",
     "eslint-plugin-eslint-plugin": "^5.0.7",
@@ -28,6 +30,7 @@
     "typescript": "^4.6.2"
   },
   "scripts": {
+    "cm": "cz",
     "build": "tsc && cp lib/index.js dist/",
     "lint": "eslint --ext .ts,.tsx .",
     "postinstall": "husky install",
@@ -40,19 +43,27 @@
     "update:eslint-docs": "eslint-doc-generator",
     "rule:generate": "yarn ts-node generate/generateNewRule.ts && yarn build && yarn create:eslint-docs"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "directories": {
+    "doc": "docs",
     "lib": "lib",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hokla-org/eslint-plugin-custom-rules.git"
+    "url": "git+https://github.com/hokla-org/bug-shield.git"
   },
   "keywords": [
-    "eslint"
+    "eslint",
+    "linter",
+    "bug detection"
   ],
   "bugs": {
-    "url": "https://github.com/hokla-org/eslint-plugin-custom-rules/issues"
+    "url": "https://github.com/hokla-org/bug-shield/issues"
   },
-  "homepage": "https://github.com/hokla-org/eslint-plugin-custom-rules#readme"
+  "homepage": "https://github.com/hokla-org/bug-shield#readme"
 }
