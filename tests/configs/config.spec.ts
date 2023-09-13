@@ -16,6 +16,7 @@ describe("getConfig", () => {
       const expectedConfig = {
         [ALL_CONFIG_NAME]: {
           plugins: [PLUGIN_NAME],
+          extends: ["plugin:@hokla/bug-shield/recommended"],
           rules: {
             [`${PLUGIN_NAME}/rule_A`]:
               ALL_RULES_MOCK["rule_A"].meta.docs?.recommended,
