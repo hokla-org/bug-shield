@@ -1,6 +1,6 @@
 # Bug Shield (ESLint plugin)
 
-<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100"> 
+<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100">
 
 ## Shield your project :
 
@@ -8,6 +8,10 @@
 
 ```
 yarn add --dev @hokla/eslint-plugin-bug-shield
+```
+Or
+```
+npm install @hokla/eslint-plugin-bug-shield --save-dev
 ```
 
 #### Choose the configs made for your project
@@ -51,6 +55,7 @@ yarn rule:generate <your-rule-name>
 
 #### Test your rule on the playground
 - Build `yarn build`
+- Restart your eslint server
 - Paste some wrong code in `./src/playground.tsx`
 - Assess that the working behavior
 
@@ -76,15 +81,15 @@ Configs section would normally go here.
 | Name                                                                                                               | Description                                                                                                                                                                         | 💼 | ⚠️ |
 | :----------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- | :- |
 | [forbid-lowercase-jsx-tags](docs/rules/forbid-lowercase-jsx-tags.md)                                               | To be used in a React Native project: this rule forbids JSX tags that don't begin with a capital letter                                                                             |    |    |
-| [luxon-force-zone-in-datetime](docs/rules/luxon-force-zone-in-datetime.md)                                         | TODO                                                                                                                                                                                |    |    |
-| [mutation-decorator-return-type-mismatch](docs/rules/mutation-decorator-return-type-mismatch.md)                   | Parameter of Mutation Decorator should match the method's return type                                                                                                               |    |    |
+| [luxon-force-zone-in-datetime](docs/rules/luxon-force-zone-in-datetime.md)                                         | force timezone option in DateTime object instantiation                                                                                                                              |    | ☑️ |
+| [mutation-decorator-return-type-mismatch](docs/rules/mutation-decorator-return-type-mismatch.md)                   | Parameter of Mutation Decorator should match the method's return type                                                                                                               | ☑️ |    |
 | [no-async-in-foreach](docs/rules/no-async-in-foreach.md)                                                           | Array.prototype.forEach is not designed for asynchronous code                                                                                                                       | ☑️ |    |
 | [no-key-or-ref-prop](docs/rules/no-key-or-ref-prop.md)                                                             | This rule forbids using props named `key` or `ref` in React function components, as they are reserved words and will not act as intended                                            | 🌐 |    |
 | [no-value-export-in-declaration-file](docs/rules/no-value-export-in-declaration-file.md)                           | This rule forbids exporting values from TypeScript declaration files (ending in ".d.ts"), which can lead to bugs since these files are dropped during transpilation.                | ☑️ |    |
 | [property-decorator-type-mismatch](docs/rules/property-decorator-type-mismatch.md)                                 | Parameter of Type Decorator should match the property type                                                                                                                          | ☑️ |    |
 | [react-query-specify-typing](docs/rules/react-query-specify-typing.md)                                             | Type parameters should always be specified when calling useQuery and useMutation from react-query                                                                                   |    | 🌐 |
 | [react-routes-must-be-wrapped-in-router](docs/rules/react-routes-must-be-wrapped-in-router.md)                     | enforce encapsulation of <...Routes> in <...Router> provider and explicit naming of components returning <...Routes> element                                                        | 🌐 |    |
-| [redux-saga-no-sequential-actions](docs/rules/redux-saga-no-sequential-actions.md)                                 | description here                                                                                                                                                                    |    |    |
+| [redux-saga-no-sequential-actions](docs/rules/redux-saga-no-sequential-actions.md)                                 | forbid multiple sequential action calls in redux dispatcher                                                                                                                         |    |    |
 | [typeorm-enforce-repository-generic-method-typing](docs/rules/typeorm-enforce-repository-generic-method-typing.md) | enforce calls to repository generic methods (save, softRemove and recover) without type specification                                                                               |    |    |
 | [typeorm-query-runner-release](docs/rules/typeorm-query-runner-release.md)                                         | Any statement calling a queryRunner should be followed by a try/catch/finally block that ensures that the connection pool is released in any case by calling queryRunner.release(). |    |    |
 

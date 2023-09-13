@@ -57,14 +57,15 @@ const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "warn",
-      description: "TODO",
+      description: "force timezone option in DateTime object instantiation",
     },
     messages: {
-      "missing-zone-in-datetime": "TODO",
+      "missing-zone-in-datetime":
+        "Missing timezone in DateTime instantiation.\nThe timezone should be set to avoid any dependency with the timezone of the server or the end-user.",
     },
     type: "problem",
     schema: [],
   },
 });
 
-export default { ...rule, configs: [] };
+export default { ...rule, configs: ["recommended"] };

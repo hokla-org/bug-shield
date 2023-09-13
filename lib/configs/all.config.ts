@@ -14,6 +14,7 @@ export const getConfig = (allRules: {
   return {
     [CONFIG_NAME]: {
       plugins: [PLUGIN_NAME],
+      extends: ["plugin:@hokla/bug-shield/recommended"],
       rules: Object.fromEntries(
         Object.keys(allRules).map((ruleName) => {
           const ruleRecommendation = allRules[ruleName].meta.docs?.recommended;

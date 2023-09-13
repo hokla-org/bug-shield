@@ -78,4 +78,4 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: [] };
+export default { ...rule, configs: ["typeorm"] };
