@@ -1,6 +1,6 @@
 # Bug Shield (ESLint plugin)
 
-<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100"> 
+<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100">
 
 ## Shield your project :
 
@@ -8,6 +8,10 @@
 
 ```
 yarn add --dev @hokla/eslint-plugin-bug-shield
+```
+Or
+```
+npm install @hokla/eslint-plugin-bug-shield --save-dev
 ```
 
 #### Choose the configs made for your project
@@ -51,6 +55,7 @@ yarn rule:generate <your-rule-name>
 
 #### Test your rule on the playground
 - Build `yarn build`
+- Restart your eslint server
 - Paste some wrong code in `./src/playground.tsx`
 - Assess that the working behavior
 
