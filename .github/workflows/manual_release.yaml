@@ -56,6 +56,8 @@ jobs:
 
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@v9.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_GITHUB_ACCESS_TOKEN }}
         with:
           tag-prefix: "v"
           version-type: ${{ github.event.inputs.version-type }}
