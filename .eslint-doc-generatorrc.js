@@ -5,6 +5,7 @@ const config = {
     ["test", "🧪"],
     ["recommended", "☑️"],
     ["react", "🌐"],
+    ["react-native", "⚛️"],
   ],
   ignoreConfig: ["all", "test"],
   urlConfigs: "https://github.com/hokla-org/eslint-plugin-bug-shield",
