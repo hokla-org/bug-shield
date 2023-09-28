@@ -6,17 +6,19 @@
   "main": "dist/index.js",
   "description": "ESLint rules to comply with Hokla's best development practices",
   "dependencies": {
-    "requireindex": "^1.2.0",
+    "@types/eslint": "^8.44.2",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "requireindex": "^1.2.0"
   },
   "devDependencies": {
     "@hokla/eslint-plugin-custom-rules": "link:./dist",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/parser": "^5.15.0",
     "@typescript-eslint/utils": "^5.15.0",
-    "eslint": "^8.11.0",
+    "eslint": "^8.48.0",
     "eslint-doc-generator": "^1.4.3",
     "eslint-plugin-eslint-plugin": "^5.0.7",
     "husky": "^8.0.3",

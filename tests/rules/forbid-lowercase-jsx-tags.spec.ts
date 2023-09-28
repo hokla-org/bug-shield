@@ -6,8 +6,8 @@ const ruleTester = new ESLintUtils.RuleTester({
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
-    }
-  }
+    },
+  },
 });
 
 ruleTester.run("{RULE_NAME}", rule, {
@@ -38,7 +38,10 @@ ruleTester.run("{RULE_NAME}", rule, {
         return <div><p>Bonjour !</p></div>;
       }
       `,
-      errors: [{ messageId: "forbid-lowercase-jsx-tags" }, { messageId: "forbid-lowercase-jsx-tags" }],
+      errors: [
+        { messageId: "forbid-lowercase-jsx-tags" },
+        { messageId: "forbid-lowercase-jsx-tags" },
+      ],
     },
     {
       code: `
@@ -47,6 +50,6 @@ ruleTester.run("{RULE_NAME}", rule, {
       }
       `,
       errors: [{ messageId: "forbid-lowercase-jsx-tags" }],
-    }
+    },
   ],
 });
