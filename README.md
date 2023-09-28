@@ -60,6 +60,9 @@ yarn rule:generate <your-rule-name>
 - Paste some wrong code in `./src/playground.tsx`
 - Assess that the working behavior
 
+#### Generate the rule documentation
+- Run `yarn create:eslint-docs` if you just created the rule, otherwise run `yarn update:eslint-docs`
+
 
 #### Ask for a review !
 
@@ -68,7 +71,35 @@ yarn rule:generate <your-rule-name>
 
 ## Configs
 
-Configs section would normally go here.
+#### Create a new config
+[TO BE IMPROVED]
+- Create a [CONFIG_NAME].config.ts file in the config folder
+- In this file, copy the following block
+```ts
+import {
+  RuleListener,
+  RuleModule,
+} from "@typescript-eslint/utils/dist/ts-eslint";
+import { Config, PLUGIN_NAME, getConfigCustomRules } from "../utils/config";
+
+export const CONFIG_NAME = ...; // Use the same config name as your file name
+
+export const getConfig = (allRules: {
+  [ruleName: string]: RuleModule<string, [], RuleListener> & {
+    configs: string[];
+  };
+}): { [configName: string]: Config } => {
+  return {
+    [CONFIG_NAME]: {
+      plugins: [PLUGIN_NAME],
+      rules: { ...getConfigCustomRules(CONFIG_NAME, allRules) },
+    },
+  };
+};
+```
+- Modify the config as you please
+- Add your config in .eslint-doc-generator.js
+- Generate the documentation with the new config : `yarn update:eslint-docs`
 
 ## Rules
 
