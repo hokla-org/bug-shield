@@ -99,6 +99,7 @@ export const getConfig = (allRules: {
 ```
 - Modify the config as you please
 - Add your config in .eslint-doc-generator.js
+- Build `yarn build`
 - Generate the documentation with the new config : `yarn update:eslint-docs`
 
 ## Rules
