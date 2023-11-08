@@ -17,11 +17,12 @@ export const getConfig = (allRules: {
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript",
-        "prettier"
+        "prettier",
       ],
       plugins: [PLUGIN_NAME],
       rules: {
         ...getConfigCustomRules(CONFIG_NAME, allRules),
+        "array-callback-return": "error",
       },
     },
   };
