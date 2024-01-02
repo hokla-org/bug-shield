@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "forbid-lowercase-jsx-tags";
 
 type Options = [];
@@ -44,4 +46,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["react-native"] };
+const ruleConfigs: ConfigName[] = ["react-native"];
+
+export default { ...rule, configs: ruleConfigs };

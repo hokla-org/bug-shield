@@ -4,6 +4,8 @@ import {
   TSESTree,
 } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "missing-zone-in-datetime";
 
 type Options = [];
@@ -68,4 +70,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["recommended"] };
+const ruleConfigs: ConfigName[] = ["recommended"];
+
+export default { ...rule, configs: ruleConfigs };

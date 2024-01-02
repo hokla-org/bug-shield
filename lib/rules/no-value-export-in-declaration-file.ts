@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "no-value-export-in-declaration-file";
 
 type Options = [];
@@ -44,4 +46,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["recommended"] };
+const ruleConfigs: ConfigName[] = ["recommended"];
+
+export default { ...rule, configs: ruleConfigs };

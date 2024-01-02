@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "missing-use-query-types" | "missing-use-mutation-types";
 
 type Options = [];
@@ -47,4 +49,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["react"] };
+const ruleConfigs: ConfigName[] = ["react"];
+
+export default { ...rule, configs: ruleConfigs };

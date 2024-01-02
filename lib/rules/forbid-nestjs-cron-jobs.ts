@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "forbid-nestjs-cron-jobs";
 
 type Options = [];
@@ -38,5 +40,6 @@ const rule = createRule<Options, MessageIds>({
     schema: [],
   },
 });
+const ruleConfigs: ConfigName[] = ["nestjs"];
 
-export default { ...rule, configs: ["nestjs"] };
+export default { ...rule, configs: ruleConfigs };

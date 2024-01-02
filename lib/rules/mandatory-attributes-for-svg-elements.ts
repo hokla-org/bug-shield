@@ -4,6 +4,8 @@ import {
   TSESTree,
 } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "mandatory-attributes-for-svg-elements";
 
 type Options = [];
@@ -65,6 +67,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-const ruleConfigs = ["react", "react-native"];
+const ruleConfigs: ConfigName[] = ["react", "react-native"];
 
 export default { ...rule, configs: ruleConfigs };

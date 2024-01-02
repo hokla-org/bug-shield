@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "no-useless-expression-statement";
 
 type Options = [];
@@ -24,14 +26,18 @@ const rule = createRule<Options, MessageIds>({
   meta: {
     docs: {
       recommended: "error",
-      description: "A statement that only calls a variable does nothing. Usually, the developer meant to call a function but forgot the parentheses.",
+      description:
+        "A statement that only calls a variable does nothing. Usually, the developer meant to call a function but forgot the parentheses.",
     },
     messages: {
-      "no-useless-expression-statement": "This statement does nothing. Did you mean to call a function instead?",
+      "no-useless-expression-statement":
+        "This statement does nothing. Did you mean to call a function instead?",
     },
     type: "problem",
     schema: [],
   },
 });
 
-export default { ...rule, configs: ["recommended"] };
+const ruleConfigs: ConfigName[] = ["recommended"];
+
+export default { ...rule, configs: ruleConfigs };

@@ -4,6 +4,8 @@ import {
   TSESTree,
 } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "missing-query-runner-final-release";
 
 type Options = [];
@@ -96,4 +98,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["typeorm"] };
+const ruleConfigs: ConfigName[] = ["typeorm"];
+
+export default { ...rule, configs: ruleConfigs };

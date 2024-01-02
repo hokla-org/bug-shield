@@ -5,6 +5,7 @@ import {
   getJSXElementTagName,
   isJSXElement,
 } from "../utils/common";
+import { ConfigName } from "../utils/config.type";
 
 type MessageIds =
   | "ambiguous-naming-for-component-returning-routes"
@@ -90,4 +91,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["react"] };
+const ruleConfigs: ConfigName[] = ["react"];
+
+export default { ...rule, configs: ruleConfigs };

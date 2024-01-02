@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "no-key-or-ref-prop";
 
 type Options = [];
@@ -106,4 +108,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["react"] };
+const ruleConfigs: ConfigName[] = ["react"];
+
+export default { ...rule, configs: ruleConfigs };

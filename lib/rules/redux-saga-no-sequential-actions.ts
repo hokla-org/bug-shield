@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
+
 type MessageIds = "sequential-redux-actions";
 const DESCRIPTION = `Avoid dispatching two actions sequentially as it will result in multiple UI updates, and unexpected display due to illegal intermediate states.
 Prefer using a single 'event' - type action that respects domain / name or you can use batchActions() from 'redux-batched-actions' to batch multiple actions together.
@@ -43,4 +45,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["redux"] };
+const ruleConfigs: ConfigName[] = ["redux"];
+
+export default { ...rule, configs: ruleConfigs };
