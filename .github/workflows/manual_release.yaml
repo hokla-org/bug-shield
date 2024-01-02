@@ -1,4 +1,5 @@
-name: Manual Release Trigger
+name: Trigger NPM Package Release
+
 on:
   workflow_dispatch:
     branches:
@@ -47,12 +48,17 @@ jobs:
       - name: Run Unit tests
         run: yarn test
 
-  BumpVersion:
+  BumpVersionAndPublishToNpm:
     needs: RunTests
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@v9.1.0
@@ -62,3 +68,9 @@ jobs:
           tag-prefix: "v"
           version-type: ${{ github.event.inputs.version-type }}
           commit-message: "chore(package.json): bump version to {{version}}"
+
+      - run: yarn
+      - run: yarn build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
