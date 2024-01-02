@@ -3,6 +3,8 @@ import {
   RuleModule,
 } from "@typescript-eslint/utils/dist/ts-eslint";
 
+import { ConfigName } from "./config.type";
+
 export const PLUGIN_NAME = "@hokla/bug-shield";
 
 type ConfigRules = { [k: string]: false | "error" | "strict" | "warn" };
@@ -15,7 +17,7 @@ export interface Config {
 }
 
 export function getConfigCustomRules(
-  configName: string,
+  configName: ConfigName,
   allRules: {
     [ruleName: string]: RuleModule<string, [], RuleListener> & {
       configs: string[];
