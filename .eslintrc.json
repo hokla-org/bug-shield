@@ -10,8 +10,14 @@
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
+  "plugins": ["simple-import-sort"],
   "extends": [
+    "eslint:recommended",
     "plugin:eslint-plugin/recommended",
     "plugin:@hokla/bug-shield/all"
-  ]
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
 }
