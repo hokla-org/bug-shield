@@ -4,6 +4,7 @@ import {
   TSESTree,
 } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../utils/config.type";
 import {
   findDecoratorArguments,
   findParentClass,
@@ -131,4 +132,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["TODO"] };
+const ruleConfigs: ConfigName[] = ["typeorm"];
+
+export default { ...rule, configs: ruleConfigs };
