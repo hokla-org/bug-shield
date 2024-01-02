@@ -5,3 +5,4 @@ yarn build
 yarn typecheck
 yarn lint
 yarn test --changedSince=origin/main
+yarn check:eslint-docs

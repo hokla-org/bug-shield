@@ -15,6 +15,11 @@ export const isJSXElement = (
     | undefined,
 ): expr is TSESTree.JSXElement => expr?.type === AST_NODE_TYPES.JSXElement;
 
+export const isCallExpression = (
+  node: TSESTree.Node,
+): node is TSESTree.CallExpression =>
+  node.type !== AST_NODE_TYPES.CallExpression;
+
 export const isFunctionDeclarationWithoutName = (
   expr: TSESTree.FunctionDeclaration | TSESTree.VariableDeclarator,
 ): expr is TSESTree.FunctionDeclarationWithOptionalName =>
