@@ -1,17 +1,9 @@
-import {
-  RuleListener,
-  RuleModule,
-} from "@typescript-eslint/utils/dist/ts-eslint";
+import { PLUGIN_NAME } from "../utils/config";
+import { ConfigName, CustomConfig } from "../utils/config.type";
 
-import { Config, PLUGIN_NAME } from "../utils/config";
+export const CONFIG_NAME: ConfigName = "all";
 
-export const CONFIG_NAME = "all";
-
-export const getConfig = (allRules: {
-  [ruleName: string]: RuleModule<string, [], RuleListener> & {
-    configs: string[];
-  };
-}): { [configName: string]: Config } => {
+export const getConfig: CustomConfig<typeof CONFIG_NAME> = (allRules) => {
   return {
     [CONFIG_NAME]: {
       plugins: [PLUGIN_NAME],
@@ -21,7 +13,7 @@ export const getConfig = (allRules: {
           const ruleRecommendation = allRules[ruleName].meta.docs?.recommended;
           return [
             `${PLUGIN_NAME}/${ruleName}`,
-            ruleRecommendation !== undefined ? ruleRecommendation : false,
+            ruleRecommendation !== undefined ? ruleRecommendation : "error",
           ];
         }),
       ),

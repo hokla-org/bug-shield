@@ -1,17 +1,9 @@
-import {
-  RuleListener,
-  RuleModule,
-} from "@typescript-eslint/utils/dist/ts-eslint";
+import { getConfigCustomRules, PLUGIN_NAME } from "../utils/config";
+import { ConfigName, CustomConfig } from "../utils/config.type";
 
-import { Config, getConfigCustomRules, PLUGIN_NAME } from "../utils/config";
+export const CONFIG_NAME: ConfigName = "redux";
 
-export const CONFIG_NAME = "redux";
-
-export const getConfig = (allRules: {
-  [ruleName: string]: RuleModule<string, [], RuleListener> & {
-    configs: string[];
-  };
-}): { [configName: string]: Config } => {
+export const getConfig: CustomConfig<typeof CONFIG_NAME> = (allRules) => {
   return {
     [CONFIG_NAME]: {
       extends: [],

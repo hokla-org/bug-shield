@@ -84,11 +84,7 @@ import { Config, PLUGIN_NAME, getConfigCustomRules } from "../utils/config";
 
 export const CONFIG_NAME = ...; // Use the same config name as your file name
 
-export const getConfig = (allRules: {
-  [ruleName: string]: RuleModule<string, [], RuleListener> & {
-    configs: string[];
-  };
-}): { [configName: string]: Config } => {
+export const getConfig: CustomConfig<typeof CONFIG_NAME> = (allRules) => {
   return {
     [CONFIG_NAME]: {
       plugins: [PLUGIN_NAME],
