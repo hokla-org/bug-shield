@@ -1,6 +1,6 @@
 import * as fs from "fs";
-import * as readline from "readline";
 import * as path from "path";
+import * as readline from "readline";
 
 const RULE_BOILERPLATE_FILE = "rule.boilerplate.ts";
 const RULE_TESTS_BOILERPLATE_FILE = "ruleTests.boilerplate.ts";

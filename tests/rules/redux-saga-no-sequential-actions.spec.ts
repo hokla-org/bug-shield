@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/redux-saga-no-sequential-actions";
 
 const ruleTester = new ESLintUtils.RuleTester({

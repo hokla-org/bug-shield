@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/mandatory-attributes-for-svg-elements";
 
 const ruleTester = new ESLintUtils.RuleTester({

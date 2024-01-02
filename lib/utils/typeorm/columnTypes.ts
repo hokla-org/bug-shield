@@ -1,4 +1,5 @@
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
+
 import { parseObjectLiteral } from "../treeTraversal";
 
 type ColumnTypeString = "string" | "number" | "boolean" | "Date" | "other";

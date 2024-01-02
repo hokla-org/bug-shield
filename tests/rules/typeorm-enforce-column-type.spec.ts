@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/typeorm-enforce-column-type";
 
 const ruleTester = new ESLintUtils.RuleTester({

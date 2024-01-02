@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/no-useless-expression-statement";
 
 const ruleTester = new ESLintUtils.RuleTester({

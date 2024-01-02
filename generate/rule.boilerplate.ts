@@ -1,5 +1,7 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
+import { ConfigName } from "../lib/utils/config.type";
+
 type MessageIds = "RULE_NAME_PLACEHOLDER";
 
 type Options = [];
@@ -35,4 +37,6 @@ const rule = createRule<Options, MessageIds>({
   },
 });
 
-export default { ...rule, configs: ["TODO"] };
+const configs: ConfigName[] = ["TODO"];
+
+export default { ...rule, configs };

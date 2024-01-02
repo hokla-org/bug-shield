@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/forbid-nestjs-cron-jobs";
 
 const ruleTester = new ESLintUtils.RuleTester({

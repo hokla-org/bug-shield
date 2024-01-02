@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/forbid-lowercase-jsx-tags";
 
 const ruleTester = new ESLintUtils.RuleTester({

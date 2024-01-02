@@ -1,8 +1,9 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
+
 import {
   getFunctionalComponentName,
-  isJSXElement,
   getJSXElementTagName,
+  isJSXElement,
 } from "../utils/common";
 
 type MessageIds =

@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/mutation-decorator-return-type-mismatch";
 
 const ruleTester = new ESLintUtils.RuleTester({

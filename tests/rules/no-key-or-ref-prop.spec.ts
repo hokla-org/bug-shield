@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/no-key-or-ref-prop";
 
 const ruleTester = new ESLintUtils.RuleTester({

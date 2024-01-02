@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/RULE_NAME_PLACEHOLDER";
 
 const ruleTester = new ESLintUtils.RuleTester({

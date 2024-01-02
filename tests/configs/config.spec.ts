@@ -1,10 +1,10 @@
 import {
-  getConfig as getAllConfig,
   CONFIG_NAME as ALL_CONFIG_NAME,
+  getConfig as getAllConfig,
 } from "../../lib/configs/all.config";
 import {
-  getConfig as getTestConfig,
   CONFIG_NAME as TEST_CONFIG_NAME,
+  getConfig as getTestConfig,
 } from "../../lib/configs/test.config";
 import { PLUGIN_NAME } from "../../lib/utils/config";
 import { ALL_RULES_MOCK } from "./config.mock";

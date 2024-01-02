@@ -1,4 +1,5 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
+
 import rule from "../../lib/rules/no-value-export-in-declaration-file";
 
 const ruleTesterDeclarationFile = new ESLintUtils.RuleTester({

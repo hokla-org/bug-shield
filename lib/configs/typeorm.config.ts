@@ -2,7 +2,8 @@ import {
   RuleListener,
   RuleModule,
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { Config, PLUGIN_NAME, getConfigCustomRules } from "../utils/config";
+
+import { Config, getConfigCustomRules, PLUGIN_NAME } from "../utils/config";
 
 export const CONFIG_NAME = "typeorm";
 
