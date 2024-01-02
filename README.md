@@ -1,15 +1,13 @@
 # Bug Shield (ESLint plugin)
 
-<img src="./assets/bug-shield-logo.jpg" alt="Bug Shield Logo" title="Bug Shield Logo" width="100">
+<img src="./assets/bug-shield-logo.png" alt="Bug Shield Logo" title="Bug Shield Logo" width="100">
+
+A team can build its own shield to kill bugs for good
 
 ## Shield your project :
 
 #### Install
 
-```
-yarn add --dev @hokla/eslint-plugin-bug-shield
-```
-Or
 ```
 npm install @hokla/eslint-plugin-bug-shield --save-dev
 ```
@@ -33,7 +31,7 @@ In your `.eslintrc.json` file :
 
 ## Kill bugs across many projects by crafting the shield :
 
-#### Ensure a shield does not already exist
+#### Ensure a shield does not already exist in the open-source world
 
 #### Generate a new rule
 
@@ -45,14 +43,15 @@ yarn rule:generate <your-rule-name>
 
 #### Implement the rule
 - Find a good AST selector :
-  - https://astexplorer.net/
-  - https://estools.github.io/esquery/
-  - https://typescript-eslint.io/play
-  - https://www.notion.so/m33/Faire-ses-propres-r-gles-de-linter-AST-801c068aa15d40a4b39bc0ceff5e49aa
-- Debug the test in live to check the nature of the selected node
+  - [https://typescript-eslint.io/play](https://typescript-eslint.io/play/#ts=5.3.3&showAST=es&fileType=.tsx&code=FAYw9gdgzgLgBAWwJ4FEAeBDBAHANgUwGEwATfOAXjgAoBKSgPjgG9g44SwAhDEgZRgBXAGbCAEvgBO%2BOgG42caUMkQ4wjLij55AXyA&eslintrc=N4KABGBEBOCuA2BTAzpAXGYBfEWg&tsconfig=N4KABGBEDGD2C2AHAlgGwKYCcDyiAuysAdgM6QBcYoEEkJemy0eAcgK6qoDCAFutAGsylBm3TgwAXxCSgA&tokens=false)
+  - https://eslint.org/docs/latest/extend/selectors
+- Debug the test in live to check the nature of the selected node:
+  - In your rule implementation, set a large AST node selector (like "VariableDeclarator")
+  - Add a break point inside your rule
+  - Run the VSCode launch config "Tests Debugger" (optionnaly, modify the launch command by adding a file selector)
 - Implement the rule
-  - https://eslint-utils.mysticatea.dev/
-  - https://typescript-eslint.io/
+  - Get inspiration from other existing rules in this plugin
+  - https://typescript-eslint.io/developers/custom-rules
 
 #### Test your rule on the playground
 - Build `yarn build`
