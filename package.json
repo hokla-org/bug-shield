@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "@hokla/eslint-plugin-bug-shield",
   "author": "Ludovic Descateaux <ludovicd@hokla.com>",
   "license": "MIT",
