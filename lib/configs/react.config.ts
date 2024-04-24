@@ -6,11 +6,6 @@ export const CONFIG_NAME: ConfigName = "react";
 export const getConfig: CustomConfig<typeof CONFIG_NAME> = (allRules) => {
   return {
     [CONFIG_NAME]: {
-      extends: [
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
-      ],
       plugins: [PLUGIN_NAME],
       rules: {
         ...getConfigCustomRules(CONFIG_NAME, allRules),

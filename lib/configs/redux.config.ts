@@ -6,7 +6,6 @@ export const CONFIG_NAME: ConfigName = "redux";
 export const getConfig: CustomConfig<typeof CONFIG_NAME> = (allRules) => {
   return {
     [CONFIG_NAME]: {
-      extends: [],
       plugins: [PLUGIN_NAME],
       rules: {
         ...getConfigCustomRules(CONFIG_NAME, allRules),

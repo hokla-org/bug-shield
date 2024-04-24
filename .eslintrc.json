@@ -13,6 +13,9 @@
   "plugins": ["simple-import-sort"],
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "prettier",
     "plugin:eslint-plugin/recommended",
     "plugin:@hokla/bug-shield/all"
   ],
