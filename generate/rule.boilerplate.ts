@@ -1,6 +1,6 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
 
-import { ConfigName } from "../lib/utils/config.type";
+import { ConfigName } from "../utils/config.type";
 
 type MessageIds = "RULE_NAME_PLACEHOLDER";
 
