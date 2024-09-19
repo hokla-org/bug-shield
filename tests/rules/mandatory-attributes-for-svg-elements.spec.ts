@@ -55,12 +55,5 @@ ruleTester.run("{RULE_NAME}", rule, {
       errors: [{ messageId: "mandatory-attributes-for-svg-elements" }],
       parserOptions: { ...activateJsxParsingOption },
     },
-    {
-      code: `
-      <Svg height="100" width={width}/>
-      `,
-      errors: [{ messageId: "mandatory-attributes-for-svg-elements" }],
-      parserOptions: { ...activateJsxParsingOption },
-    },
   ],
 });

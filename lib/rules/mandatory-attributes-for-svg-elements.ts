@@ -14,7 +14,7 @@ const createRule = ESLintUtils.RuleCreator(
   (name) => `https://hokla.com/rule/${name}`,
 );
 
-const EXPECTED_ATTRIBUTE_NAMES = ["height", "width", "viewBox"];
+const EXPECTED_ATTRIBUTE_NAMES = ["height", "width"];
 
 const rule = createRule<Options, MessageIds>({
   name: "mandatory-attributes-for-svg-elements",
@@ -56,11 +56,11 @@ const rule = createRule<Options, MessageIds>({
     docs: {
       recommended: "error",
       description:
-        "Enforces the declaration of properties width, height and viewBox for svg elements to prevent non-desired display",
+        "Enforces the declaration of properties width, height for svg elements to prevent non-desired display",
     },
     messages: {
       "mandatory-attributes-for-svg-elements":
-        "Svg element is missing one of the following properties: width, height, viewBox",
+        "Svg element is missing one of the following properties: width, height",
     },
     type: "problem",
     schema: [],
