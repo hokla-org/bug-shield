@@ -42,9 +42,9 @@
     "postpack": "pinst --enable",
     "test": "jest",
     "typecheck": "tsc --noEmit",
-    "check:eslint-docs": "eslint-doc-generator --check",
-    "create:eslint-docs": "eslint-doc-generator --init-rule-docs",
-    "update:eslint-docs": "eslint-doc-generator",
+    "check:eslint-docs": "eslint-doc-generator --check --rule-doc-section-options=false",
+    "create:eslint-docs": "eslint-doc-generator --init-rule-docs --rule-doc-section-options=false",
+    "update:eslint-docs": "eslint-doc-generator --rule-doc-section-options=false",
     "rule:generate": "yarn ts-node generate/generateNewRule.ts && yarn build && yarn create:eslint-docs"
   },
   "config": {
