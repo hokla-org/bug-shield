@@ -47,7 +47,22 @@ const rule = createRule<Options, MessageIds>({
           const methodName = callee.property.name;
 
           // Check if it's one of the Array methods we want to ignore
-          const arrayMethods = ["map", "reduce", "filter", "sort"];
+          const arrayMethods = [
+            "map",
+            "reduce",
+            "filter",
+            "sort",
+            "forEach",
+            "every",
+            "some",
+            "find",
+            "findIndex",
+            "findLast",
+            "findLastIndex",
+            "flatMap",
+            "reduceRight",
+            "toSorted",
+          ];
           return arrayMethods.includes(methodName);
         }
       }
@@ -68,9 +83,26 @@ const rule = createRule<Options, MessageIds>({
       }
 
       if (node.params.length > numParams) {
+        let loc;
+
+        if (
+          node.type === "FunctionDeclaration" ||
+          node.type === "FunctionExpression"
+        ) {
+          // Highlight only the function name
+          loc = node.id ? node.id.loc : node.loc;
+        } else if (node.type === "ArrowFunctionExpression") {
+          // Highlight the arrow (=>) for arrow functions
+          const arrowToken = context
+            .getSourceCode()
+            .getTokenBefore(node.body, (token: any) => token.value === "=>");
+          loc = arrowToken ? arrowToken.loc : node.loc;
+        }
+
         context.report({
           node,
           messageId: "max-params-but-better",
+          loc, // Use the calculated location to highlight only the function name or arrow
           data: {
             count: node.params.length,
             max: numParams,
